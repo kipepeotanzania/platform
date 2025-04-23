@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Kipepeo Tanzania{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body style="background-color: #ffffff; color: #333;">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm" style="background-color: #a7648a;">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-white" href="{% url 'home' %}">Kipepeo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link text-white" href="{% url 'home' %}">Inicio</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Acerca de</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'origin' %}">Origen</a></li>
+            <li><a class="dropdown-item" href="{% url 'who' %}">Quiénes somos</a></li>
+            <li><a class="dropdown-item" href="{% url 'mission' %}">Misión / Visión</a></li>
+            <li><a class="dropdown-item" href="{% url 'objectives' %}">Objetivos</a></li>
+            <li><a class="dropdown-item" href="{% url 'transparency' %}">Transparencia</a></li>
+            <li><a class="dropdown-item" href="{% url 'location' %}">Dónde estamos</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Proyectos</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'project_table' %}">Together at the Table</a></li>
+            <li><a class="dropdown-item" href="{% url 'project_home' %}">A Place to Call Home</a></li>
+            <li><a class="dropdown-item" href="{% url 'project_library' %}">Library</a></li>
+            <li><a class="dropdown-item" href="{% url 'project_computer' %}">Computer Class</a></li>
+            <li><a class="dropdown-item" href="{% url 'project_mamas' %}">Mamas Project</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Colabora</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'volunteer_international' %}">International Volunteer</a></li>
+            <li><a class="dropdown-item" href="{% url 'volunteer_home' %}">Volunteer from Home</a></li>
+            <li><a class="dropdown-item" href="{% url 'collab_donations' %}">Donations</a></li>
+            <li><a class="dropdown-item" href="{% url 'collab_sponsorship' %}">Child Sponsorship</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link text-white" href="{% url 'immersive_travel' %}">Immersive Travel</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="{% url 'gallery' %}">Galería</a></li>
+      </ul>
+
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link text-white" href="{% url 'login' %}">Login</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="{% url 'register' %}">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main content -->
+<div class="container mt-4">
+  {% block content %}
+  {% endblock %}
+</div>
+
+<!-- Footer -->
+<footer class="mt-5 py-4" style="background-color: #e3dad2;">
+  <div class="container text-center">
+    <p class="mb-2" style="color: #333;">&copy; 2025 Kipepeo Tanzania — Empowering Communities, Transforming Lives</p>
+    <p style="font-size: 14px; color: #666;">Designed with purpose and passion.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
