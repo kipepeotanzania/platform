@@ -3,6 +3,9 @@ from django.contrib.auth import login, logout, authenticate
 from .forms import CustomUserCreationForm, CustomLoginForm, DocumentUploadForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib import messages
 
 
 def register_view(request):
@@ -105,3 +108,35 @@ def upload_document(request):
     else:
         form = DocumentUploadForm()
     return render(request, 'users/upload_document.html', {'form': form})
+
+def contact_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        
+        # Send email
+        email_message = f"""
+        New Contact Form Submission:
+        
+        Name: {name}
+        Email: {email}
+        Subject: {subject}
+        
+        Message:
+        {message}
+        """
+        
+        send_mail(
+            subject=f'Contact Form: {subject}',
+            message=email_message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[settings.CONTACT_EMAIL],
+            fail_silently=False,
+        )
+        
+        messages.success(request, 'Thank you for your message! We will get back to you soon.')
+        return redirect('contact')
+    
+    return render(request, 'users/contact.html')

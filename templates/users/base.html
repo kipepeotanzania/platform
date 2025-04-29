@@ -3,28 +3,320 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Kipepeo Tanzania{% endblock %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="{% static 'images/favicon/kipepeo-icon.png' %}" type="image/x-icon">
+  <link rel="icon" type="image/png" href="{% static 'images/favicon/kipepeo-icon.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/kipepeo-icon.png' %}">
+  <meta name="msapplication-TileImage" content="{% static 'images/favicon/kipepeo-icon.png' %}">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
   <!-- Bootstrap CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("{% static 'images/pattern.svg' %}") repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(167, 100, 138, 0.1);
+    }
+    .stat-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: scale(1.05);
+    }
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #a7648a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .icon-wrapper i {
+      font-size: 2rem;
+      color: white;
+    }
+    .btn-primary, .btn-outline-primary {
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+    }
+    .btn-primary {
+      background-color: #a7648a;
+      border: none;
+    }
+    .btn-outline-primary {
+      color: #a7648a;
+      border-color: #a7648a;
+    }
+    .btn-primary:hover, .btn-outline-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(167, 100, 138, 0.3);
+    }
+    .section-title {
+      position: relative;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: #a7648a;
+    }
+    .section-container {
+      position: relative;
+      padding: 4rem 0;
+    }
+    .section-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("{% static 'images/pattern-light.svg' %}") repeat;
+      opacity: 0.05;
+      z-index: 0;
+    }
+    .section-content {
+      position: relative;
+      z-index: 1;
+    }
+    .highlight-bg {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .highlight-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(181, 238, 179, 0.1) 0%, rgba(167, 100, 138, 0.1) 100%);
+      z-index: 0;
+    }
+    .highlight-content {
+      position: relative;
+      z-index: 1;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+    }
+    .card-wrapper {
+      width: 100%;
+      max-width: 350px;
+    }
+    /* New styles for immersive page */
+    .process-step {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .process-step .icon-wrapper {
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+    }
+    .process-step h4 {
+      margin-bottom: 0.5rem;
+      color: #a7648a;
+    }
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background-color: #a7648a;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      width: 50%;
+      padding-right: 2rem;
+    }
+    .timeline-item:nth-child(even) {
+      margin-left: auto;
+      padding-right: 0;
+      padding-left: 2rem;
+    }
+    .timeline-icon {
+      position: absolute;
+      right: -1rem;
+      top: 0;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: #a7648a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .timeline-item:nth-child(even) .timeline-icon {
+      right: auto;
+      left: -1rem;
+    }
+    .timeline-content {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(167, 100, 138, 0.1);
+    }
+    .timeline-content h4 {
+      color: #a7648a;
+      margin-bottom: 0.5rem;
+    }
+    .list-unstyled li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .list-unstyled i {
+      margin-right: 1rem;
+      font-size: 1.2rem;
+    }
+    /* Updated Logo styles */
+    .navbar {
+      background-color: #ffffff !important;
+      border-bottom: 1px solid rgba(167, 100, 138, 0.1);
+      padding: 0.5rem 1rem;
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      color: #a7648a !important;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 0;
+    }
+    .navbar-brand img {
+      height: 35px;
+      width: auto;
+      margin-right: 8px;
+    }
+    .navbar-brand span {
+      color: #a7648a !important;
+    }
+    .nav-link {
+      color: #a7648a !important;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem !important;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+    }
+    .dropdown-menu {
+      border-radius: 8px;
+      border: 1px solid rgba(167, 100, 138, 0.1);
+      box-shadow: 0 2px 10px rgba(167, 100, 138, 0.1);
+    }
+    .dropdown-item {
+      color: #a7648a;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+    }
+    .dropdown-item:hover {
+      background-color: rgba(167, 100, 138, 0.1);
+      color: #8a4e6f;
+    }
+    .nav-link:hover {
+      color: #8a4e6f !important;
+    }
+    .navbar-toggler {
+      border-color: rgba(167, 100, 138, 0.5);
+      padding: 0.25rem 0.5rem;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28167, 100, 138, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      width: 1.2em;
+      height: 1.2em;
+    }
+  </style>
 </head>
 <body style="background-color: #ffffff; color: #333;">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm" style="background-color: #a7648a;">
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold text-white" href="{% url 'home' %}">Kipepeo</a>
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <img src="{% static 'images/favicon/kipepeo-icon.png' %}" alt="Kipepeo Tanzania Logo" class="me-2">
+      <span>Kipepeo Tanzania</span>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link text-white" href="{% url 'home' %}">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Acerca de</a>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Acerca de</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{% url 'origin' %}">Origen</a></li>
             <li><a class="dropdown-item" href="{% url 'who' %}">Quiénes somos</a></li>
@@ -36,7 +328,7 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Proyectos</a>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Proyectos</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{% url 'project_table' %}">Together at the Table</a></li>
             <li><a class="dropdown-item" href="{% url 'project_home' %}">A Place to Call Home</a></li>
@@ -47,7 +339,7 @@
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Colabora</a>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Colabora</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{% url 'volunteer_international' %}">International Volunteer</a></li>
             <li><a class="dropdown-item" href="{% url 'volunteer_home' %}">Volunteer from Home</a></li>
@@ -56,13 +348,13 @@
           </ul>
         </li>
 
-        <li class="nav-item"><a class="nav-link text-white" href="{% url 'immersive_travel' %}">Immersive Travel</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="{% url 'gallery' %}">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'immersive_travel' %}">Immersive Travel</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Galería</a></li>
       </ul>
 
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link text-white" href="{% url 'login' %}">Login</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="{% url 'register' %}">Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
       </ul>
     </div>
   </div>
@@ -84,5 +376,13 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
 </body>
 </html>

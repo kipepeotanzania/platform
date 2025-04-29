@@ -35,4 +35,5 @@ urlpatterns = [
 
     path('immersive-travel/', views.immersive_travel, name='immersive_travel'),
     path('gallery/', views.gallery_view, name='gallery'),
+    path('contact/', views.contact_view, name='contact'),
 ]
