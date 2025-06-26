@@ -4,15 +4,27 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faHome, faUtensils, faDollarSign, faReceipt, faCalendarAlt, faSun, faBookOpen, faChalkboardTeacher, faGamepad, faClock, faMusic, faPaintBrush, faSmile, faTree, faMapMarkedAlt, faGlobeAfrica, faLaptop, faUsers, faLightbulb, faEnvelope, faCamera, faMountain, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
+import V1 from '../assets/V1.jpg';
+import V2 from '../assets/V2.jpg';
+import V3 from '../assets/V3.jpg';
+import V4 from '../assets/V4.jpg';
+import V5 from '../assets/V5.jpg';
+import V6 from '../assets/V6.jpg';
+import V7 from '../assets/V7.jpg';
+import Vg1 from '../assets/Vg1.jpg';
+import Vg2 from '../assets/Vg2.jpg';
+import Vg3 from '../assets/Vg3.jpg';
+import Vg4 from '../assets/Vg4.jpg';
+import Vg5 from '../assets/Vg5.jpg';
+import Vg6 from '../assets/Vg6.jpg';
+import Vg7 from '../assets/Vg7.jpg';
+import Vg8 from '../assets/Vg8.jpg';
+import Vg9 from '../assets/Vg9.jpg';
+import Vg10 from '../assets/Vg10.jpg';
+import Vg11 from '../assets/Vg11.jpg';
+import Vg12 from '../assets/Vg12.jpg';
 
-const galleryImages = [
-  { src: 'gallery1.jpg', caption: 'Volunteers at Kilimamoja School' },
-  { src: 'gallery2.jpg', caption: 'Cultural exchange & music night' },
-  { src: 'gallery3.jpg', caption: 'Sports with the children' },
-  { src: 'gallery4.jpg', caption: 'Exploring local markets' },
-  { src: 'gallery5.jpg', caption: 'Weekend safari adventure' },
-  { src: 'gallery6.jpg', caption: 'Home-cooked meals with Eli' },
-];
+const galleryImages = [Vg1, Vg2, Vg3, Vg4, Vg5, Vg6, Vg7, Vg8, Vg9, Vg10, Vg11, Vg12];
 
 const timeline = [
   { time: '7:30 AM', icon: faSun, desc: 'Wake up and open the school with the children' },
@@ -55,9 +67,9 @@ export default function Volunteering() {
             {/* Location & Accommodation */}
             <h2 data-aos="fade-up" style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'2rem', color:'#a7648a', marginBottom:'1.5rem', textAlign:'center'}}>✈️ Volunteer in Tanzania</h2>
             <div data-aos="fade-up" style={{display:'flex', flexWrap:'wrap', gap:'2.5rem', alignItems:'flex-start', justifyContent:'center', marginBottom:'2.5rem'}}>
-              <img src="house-placeholder.jpg" alt="Local house near school" style={{width:'100%', maxWidth:260, borderRadius:18, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
-              <img src="kitchen-placeholder.jpg" alt="Shared meals or kitchen" style={{width:'100%', maxWidth:260, borderRadius:18, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
-              <img src="room-placeholder.jpg" alt="Room or surrounding nature" style={{width:'100%', maxWidth:260, borderRadius:18, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
+              <img src={V1} alt="Local house near school" style={{width:'100%', maxWidth:260, borderRadius:18, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
+              <img src={V2} alt="Shared meals or kitchen" style={{width:'100%', maxWidth:260, borderRadius:18, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
+              <img src={V3} alt="Room or surrounding nature" style={{width:'100%', maxWidth:260, borderRadius:18, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
               <div style={{flex:'1 1 320px', minWidth:260, maxWidth:420, marginTop:16}}>
                 <ul style={{listStyle:'none', padding:0, margin:0, fontFamily:'Open Sans, Inter, sans-serif', fontSize:'1.08rem', color:'#000', lineHeight:1.7}}>
                   <li><FontAwesomeIcon icon={faHome} style={{color:'#a7648a', marginRight:8}}/> Accommodation is located between Kilimamoja School and Jua Manyara Lodge (5-minute walk).</li>
@@ -82,9 +94,9 @@ export default function Volunteering() {
             </div>
             {/* Timeline Images */}
             <div data-aos="fade-up" style={{display:'flex', flexWrap:'wrap', gap:'2rem', justifyContent:'center', marginBottom:'2.5rem'}}>
-              <img src="classroom-placeholder.jpg" alt="Classroom time" style={{width:'100%', maxWidth:260, borderRadius:14, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
-              <img src="workshop-placeholder.jpg" alt="Volunteer workshops" style={{width:'100%', maxWidth:260, borderRadius:14, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
-              <img src="shared-moments-placeholder.jpg" alt="Shared moments with kids" style={{width:'100%', maxWidth:260, borderRadius:14, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
+              <img src={V4} alt="Classroom time" style={{width:'100%', maxWidth:260, borderRadius:14, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
+              <img src={V5} alt="Volunteer workshops" style={{width:'100%', maxWidth:260, borderRadius:14, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
+              <img src={V6} alt="Shared moments with kids" style={{width:'100%', maxWidth:260, borderRadius:14, boxShadow:'0 2px 8px rgba(167,100,138,0.10)', objectFit:'cover', aspectRatio:'4/3', background:'#eee'}}/>
             </div>
 
             {/* Explore on Weekends */}
@@ -96,83 +108,19 @@ export default function Volunteering() {
                 </p>
               </div>
               <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} style={{width:'100%', maxWidth:520, borderRadius:18, boxShadow:'0 4px 16px rgba(167,100,138,0.10)', overflow:'hidden', minHeight:220, background:'#eee'}}>
-                <img src="scenic-placeholder.jpg" alt="Scenic wildlife or safari" style={{width:'100%', height:'100%', objectFit:'cover', display:'block'}}/>
+                <img src={V7} alt="Scenic wildlife or safari" style={{width:'100%', height:'100%', objectFit:'cover', display:'block'}}/>
               </motion.div>
             </div>
 
-            {/* Volunteer Gallery (only in this tab) */}
-            <section style={{width:'100vw', background:'#fff', padding:'clamp(2rem, 8vw, 5rem) 0', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
-              <h2 data-aos="fade-up" style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'2rem', color:'#a7648a', textAlign:'center', marginBottom:'2.5rem', width:'100%'}}>📸 Volunteer Gallery</h2>
-              <div style={{
-                display:'grid',
-                gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))',
-                gap:'1.5rem',
-                maxWidth:1100,
-                width:'100%',
-                justifyItems:'center',
-                alignItems:'stretch',
-                margin:'0 auto',
-                padding:0
-              }}>
-                {galleryImages.map((img, i) => (
-                  <motion.div
-                    key={img.src}
-                    data-aos="fade-up"
-                    data-aos-delay={i*80}
-                    whileHover={{ scale: 1.04 }}
-                    style={{
-                      background:'#b5eeb3',
-                      borderRadius:16,
-                      boxShadow:'0 2px 8px rgba(167,100,138,0.08)',
-                      padding:0,
-                      textAlign:'center',
-                      minWidth:0,
-                      width:'100%',
-                      maxWidth:320,
-                      cursor:'pointer',
-                      transition:'box-shadow 0.2s',
-                      position:'relative',
-                      overflow:'hidden',
-                      aspectRatio:'4/3',
-                      display:'flex',
-                      flexDirection:'column',
-                      justifyContent:'flex-end',
-                    }}
-                  >
-                    <motion.img
-                      src={img.src}
-                      alt={img.caption}
-                      style={{width:'100%', height:'100%', objectFit:'cover', borderRadius:16, transition:'transform 0.4s'}}
-                      whileHover={{ scale: 1.07 }}
-                    />
-                    <motion.div
-                      initial={{ opacity: 0.85 }}
-                      whileHover={{ opacity: 1 }}
-                      style={{
-                        position:'absolute',
-                        bottom:0,
-                        left:0,
-                        right:0,
-                        background:'rgba(167,100,138,0.80)',
-                        color:'#fff',
-                        fontFamily:'Open Sans, Inter, sans-serif',
-                        fontSize:'1rem',
-                        fontWeight:600,
-                        padding:'0.7rem 1rem',
-                        borderBottomLeftRadius:16,
-                        borderBottomRightRadius:16,
-                        opacity:0.85,
-                        transition:'opacity 0.3s',
-                        textAlign:'center',
-                        pointerEvents:'none',
-                      }}
-                    >
-                      {img.caption}
-                    </motion.div>
-                  </motion.div>
-                ))}
-              </div>
-            </section>
+            {/* Gallery Section */}
+            <h2 data-aos="fade-up" style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'2rem', color:'#a7648a', textAlign:'center', marginBottom:'2.5rem'}}>Take a look</h2>
+            <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', gap:'1.5rem', padding:'0 clamp(1rem, 5vw, 3rem)'}}>
+              {galleryImages.map((img, i) => (
+                <motion.div key={img} data-aos="fade-up" data-aos-delay={i*60} whileHover={{ scale: 1.04 }} style={{overflow:'hidden', borderRadius:16, boxShadow:'0 2px 8px rgba(167,100,138,0.08)', cursor:'pointer', position:'relative', maxWidth:260, width:'100%', aspectRatio:'4/3', background:'#eee', margin:'0 auto'}}>
+                  <img src={img} alt={`Volunteer Gallery ${i+1}`} style={{width:'100%', height:'100%', display:'block', objectFit:'cover', borderRadius:16, aspectRatio:'4/3'}}/>
+                </motion.div>
+              ))}
+            </div>
 
             {/* CTA */}
             <div data-aos="fade-up" style={{display:'flex', justifyContent:'center', alignItems:'center', marginTop:'3rem', marginBottom:'2rem'}}>

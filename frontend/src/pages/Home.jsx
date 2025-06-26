@@ -2,9 +2,10 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChild, faPeopleGroup, faLeaf, faBed, faLaptop, faChalkboardTeacher, faBook, faUtensils, faFutbol, faVenus, faHandsHelping, faPlane, faDonate } from '@fortawesome/free-solid-svg-icons';
+import myPhoto1 from '../assets/myphoto1.jpg';
 
 const projectCards = [
   { icon: faBed, title: 'Dormitories' },
@@ -65,7 +66,7 @@ export default function Home() {
           <motion.button whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }} onClick={()=>navigate('/about')} style={{background:'#a7648a', color:'#fff', border:'none', borderRadius:30, padding:'0.8rem 2rem', fontWeight:700, fontSize:'1rem', fontFamily:'Poppins, Nunito, sans-serif', cursor:'pointer', boxShadow:'0 2px 8px rgba(167,100,138,0.10)', transition:'background 0.2s'}}>Meet the Team</motion.button>
         </div>
         <div data-aos="fade-left" style={{flex:'1 1 350px', minWidth:280, maxWidth:600, display:'flex', alignItems:'center', justifyContent:'center', padding:'clamp(1rem, 5vw, 3rem)'}}>
-          <img src="https://placehold.co/480x320?text=Kipepeo+Team" alt="Kipepeo Team" style={{width:'100%', maxWidth:420, borderRadius:18, boxShadow:'0 4px 24px rgba(167,100,138,0.10)'}}/>
+          <img src={myPhoto1} alt="Kipepeo Team" style={{width:'100%', maxWidth:420, borderRadius:18, boxShadow:'0 4px 24px rgba(167,100,138,0.10)'}}/>
         </div>
       </section>
 
@@ -93,20 +94,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Snapshot */}
-      <section style={{width:'100vw', background:'#fff', padding:'clamp(2rem, 8vw, 5rem) 0'}}>
-        <h2 data-aos="fade-up" style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'2rem', color:'#a7648a', textAlign:'center', marginBottom:'2.5rem'}}>Projects Snapshot</h2>
-        <div style={{display:'flex', overflowX:'auto', gap:'1.5rem', padding:'0 clamp(1rem, 5vw, 3rem)'}}>
-          {projectCards.map((card, i) => (
-            <motion.div key={card.title} data-aos="fade-up" data-aos-delay={i*80} whileHover={{ scale: 1.04 }} style={{flex:'0 0 260px', background:'#b5eeb3', borderRadius:16, boxShadow:'0 2px 8px rgba(167,100,138,0.08)', padding:'2rem 1.2rem', textAlign:'center', minWidth:220, maxWidth:260, cursor:'pointer', transition:'box-shadow 0.2s'}} onClick={()=>navigate('/projects')}>
-              <FontAwesomeIcon icon={card.icon} style={{fontSize:'2.2rem', color:'#a7648a', marginBottom:16}}/>
-              <h4 style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'1.1rem', color:'#a7648a', margin:'1rem 0 0.5rem'}}>{card.title}</h4>
-              <p style={{fontFamily:'Open Sans, Inter, sans-serif', fontSize:'0.98rem', color:'#000'}}>Learn more</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* Get Involved */}
       <section style={{width:'100vw', background:'#aa9a99', padding:'clamp(2rem, 8vw, 5rem) 0'}}>
         <h2 data-aos="fade-up" style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'2rem', color:'#fff', textAlign:'center', marginBottom:'2.5rem'}}>Get Involved</h2>
@@ -116,9 +103,9 @@ export default function Home() {
             <h3 style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'1.1rem', color:'#a7648a', margin:'1rem 0 0.5rem'}}>Volunteer</h3>
             <p style={{fontFamily:'Open Sans, Inter, sans-serif', fontSize:'0.98rem', color:'#000'}}>Share your skills and time with our community projects.</p>
           </motion.div>
-          <motion.div data-aos="fade-up" data-aos-delay="100" whileHover={{ scale: 1.04 }} style={{flex:'1 1 220px', minWidth:220, maxWidth:340, background:'#fff', borderRadius:18, boxShadow:'0 2px 8px rgba(167,100,138,0.08)', padding:'2rem 1.2rem', textAlign:'center', cursor:'pointer'}} onClick={()=>navigate('/immersive-travel')}>
+          <motion.div data-aos="fade-up" data-aos-delay="100" whileHover={{ scale: 1.04 }} style={{flex:'1 1 220px', minWidth:220, maxWidth:340, background:'#fff', borderRadius:18, boxShadow:'0 2px 8px rgba(167,100,138,0.08)', padding:'2rem 1.2rem', textAlign:'center', cursor:'pointer'}} onClick={()=>navigate('/travel')}>
             <FontAwesomeIcon icon={faPlane} style={{fontSize:'2.2rem', color:'#a7648a', marginBottom:16}}/>
-            <h3 style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'1.1rem', color:'#a7648a', margin:'1rem 0 0.5rem'}}>Travel Programs</h3>
+            <h3 style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'1.1rem', color:'#a7648a', margin:'1rem 0 0.5rem'}}>Immersive Travel</h3>
             <p style={{fontFamily:'Open Sans, Inter, sans-serif', fontSize:'0.98rem', color:'#000'}}>Experience authentic journeys that connect you with local culture and community.</p>
           </motion.div>
           <motion.div data-aos="fade-up" data-aos-delay="200" whileHover={{ scale: 1.04 }} style={{flex:'1 1 220px', minWidth:220, maxWidth:340, background:'#fff', borderRadius:18, boxShadow:'0 2px 8px rgba(167,100,138,0.08)', padding:'2rem 1.2rem', textAlign:'center', cursor:'pointer'}} onClick={()=>window.alert('Donation coming soon!')}>
