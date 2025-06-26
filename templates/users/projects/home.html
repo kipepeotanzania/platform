@@ -1,0 +1,133 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section text-center py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4" style="color: #a7648a;">The Power of Volunteerism</h1>
+        <p class="lead mb-4">Transform lives whilst transforming your own. Join our community of volunteers contributing to sustainable development whilst boosting their wellbeing and employability.</p>
+        <a href="{% url 'volunteer_international' %}" class="btn btn-primary btn-lg" style="background-color: #a7648a; border: none;">Get Involved Today</a>
+    </div>
+</div>
+
+<!-- Impact Statistics -->
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <h2 class="display-4 fw-bold" style="color: #a7648a;">20+</h2>
+            <p class="lead">Volunteers Deployed</p>
+            <p>Dedicated individuals serving in Tanzania</p>
+        </div>
+        <div class="col-md-4 mb-4">
+            <h2 class="display-4 fw-bold" style="color: #a7648a;">10+</h2>
+            <p class="lead">Community Projects</p>
+            <p>Successful initiatives completed</p>
+        </div>
+        <div class="col-md-4 mb-4">
+            <h2 class="display-4 fw-bold" style="color: #a7648a;">89%</h2>
+            <p class="lead">Improved Lives</p>
+            <p>Beneficiaries reporting better quality of life</p>
+        </div>
+    </div>
+</div>
+
+<!-- Our Programs Section -->
+<div class="container my-5">
+    <h2 class="text-center mb-4" style="color: #a7648a;">Our Volunteering Programmes</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title" style="color: #a7648a;">One-Off Events</h3>
+                    <p class="card-text">Perfect for those with limited time. Participate in community events, fundraising activities, or special projects that make an immediate impact.</p>
+                    <a href="{% url 'volunteer_international' %}" class="btn btn-outline-primary" style="color: #a7648a; border-color: #a7648a;">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title" style="color: #a7648a;">Ongoing Projects</h3>
+                    <p class="card-text">Commit to regular volunteering with our partner organisations. Build meaningful relationships whilst contributing consistently to sustainable change.</p>
+                    <a href="{% url 'project_table' %}" class="btn btn-outline-primary" style="color: #a7648a; border-color: #a7648a;">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title" style="color: #a7648a;">Remote Roles</h3>
+                    <p class="card-text">Support our mission from anywhere. Offer your skills in translation, graphic design, fundraising, or mentorship through our virtual volunteering platform.</p>
+                    <a href="{% url 'volunteer_home' %}" class="btn btn-outline-primary" style="color: #a7648a; border-color: #a7648a;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Volunteer Stories Section -->
+<div class="container my-5">
+    <h2 class="text-center mb-4" style="color: #a7648a;">Volunteer Stories</h2>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title" style="color: #a7648a;">Teaching in Arusha</h3>
+                    <p class="card-text">"My three months teaching in Arusha transformed my understanding of education. The children's enthusiasm despite limited resources showed me how powerful dedicated teaching can be."</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title" style="color: #a7648a;">Healthcare Outreach</h3>
+                    <p class="card-text">"Our team provided basic healthcare education and screening to over 500 villagers in remote areas. Many residents received their first-ever health check, leading to early detection of treatable conditions."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Get Involved Section -->
+<div class="container my-5 text-center">
+    <h2 class="mb-4" style="color: #a7648a;">Get Involved Today</h2>
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4>Apply Online</h4>
+                    <p>Complete our volunteer application form</p>
+                    <a href="{% url 'register' %}" class="btn btn-outline-primary" style="color: #a7648a; border-color: #a7648a;">Apply Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4>Interview</h4>
+                    <p>Chat with our volunteer coordinator</p>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-primary" style="color: #a7648a; border-color: #a7648a;">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4>Orientation</h4>
+                    <p>Attend our comprehensive orientation</p>
+                    <a href="{% url 'volunteer_international' %}" class="btn btn-outline-primary" style="color: #a7648a; border-color: #a7648a;">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4>Deployment</h4>
+                    <p>Begin your volunteering journey</p>
+                    <a href="{% url 'volunteer_international' %}" class="btn btn-outline-primary" style="color: #a7648a; border-color: #a7648a;">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

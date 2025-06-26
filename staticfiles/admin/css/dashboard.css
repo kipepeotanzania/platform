@@ -1,0 +1,40 @@
+/* DASHBOARD */
+.dashboard td, .dashboard th {
+    word-break: break-word;
+}
+
+.dashboard .module table th {
+    width: 100%;
+}
+
+.dashboard .module table td {
+    white-space: nowrap;
+}
+
+.dashboard .module table td a {
+    display: block;
+    padding-right: .6em;
+}
+
+/* RECENT ACTIONS MODULE */
+
+.module ul.actionlist {
+    margin-left: 0;
+}
+
+ul.actionlist li {
+    list-style-type: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dashboard #content {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding-left: clamp(1rem, 5vw, 3rem);
+  padding-right: clamp(1rem, 5vw, 3rem);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}

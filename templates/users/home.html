@@ -1,0 +1,331 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Inicio | Kipepeo Tanzania{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section text-center py-5">
+    <div class="container hero-content">
+        <div data-aos="fade-up">
+            <h1 class="display-4 fw-bold mb-4" style="color: #aa9a99;">Empowering Communities,<br>Transforming Lives</h1>
+            <p class="lead mb-4" style="max-width: 800px; margin: 0 auto;">At Kipepeo Tanzania, we're on a mission to ignite hope, inspire change, and empower communities through education, innovation, and sustainable development.</p>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="{% url 'volunteer_international' %}" class="btn btn-primary btn-lg">Get Involved</a>
+                <a href="{% url 'who' %}" class="btn btn-outline-primary btn-lg">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="section-container">
+    <div class="container section-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Get to Know Us</h2>
+        <div class="card-grid">
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Our Founding</h3>
+                        <p class="card-text">Born in 2023 from a collective vision to address pressing community challenges through collaborative action and innovative thinking.</p>
+                        <a href="{% url 'origin' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Community Leadership</h3>
+                        <p class="card-text">We believe true change comes from within communities, which is why local leaders guide our projects and initiatives from the ground up.</p>
+                        <a href="{% url 'who' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Growing Impact</h3>
+                        <p class="card-text">From humble beginnings serving one village, we've expanded to multiple regions across Tanzania, touching thousands of lives.</p>
+                        <a href="{% url 'mission' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Core Pillars Section -->
+<div class="section-container highlight-bg">
+    <div class="container highlight-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Our Core Pillars</h2>
+        <div class="card-grid">
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Innovation</h3>
+                        <p class="card-text">Funding sustainable agri-tech projects</p>
+                        <a href="{% url 'project_table' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Education</h3>
+                        <p class="card-text">Providing access, resources and opportunities</p>
+                        <a href="{% url 'project_library' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Sustainable Development</h3>
+                        <p class="card-text">Creating lasting community empowerment</p>
+                        <a href="{% url 'project_home' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Impact Statistics -->
+<div class="section-container">
+    <div class="container section-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Impact Stories</h2>
+        <div class="card-grid">
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h2 class="display-4 fw-bold" style="color: #aa9a99;">28</h2>
+                    <p class="lead">Communities Served</p>
+                    <p>Across Tanzania's most underserved regions</p>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h2 class="display-4 fw-bold" style="color: #aa9a99;">4,500+</h2>
+                    <p class="lead">Lives Improved</p>
+                    <p>Through education and sustainable development</p>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h2 class="display-4 fw-bold" style="color: #aa9a99;">12</h2>
+                    <p class="lead">Innovation Projects</p>
+                    <p>Launched in the agricultural sector</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Stories -->
+<div class="section-container highlight-bg">
+    <div class="container highlight-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Success Stories</h2>
+        <div class="card-grid">
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Amina's Story</h3>
+                        <p class="card-text">"Kipepeo's agricultural training transformed my small plot into a thriving business that now supports my entire family."</p>
+                        <a href="{% url 'project_table' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Farida's Journey</h3>
+                        <p class="card-text">"The scholarship programme allowed me to continue my education when my parents couldn't afford school fees. I'm now studying to become a teacher."</p>
+                        <a href="{% url 'project_library' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Mwanza Village</h3>
+                        <p class="card-text">"Our clean water initiative has reduced waterborne illness by 70% and given women in our community hours back in their day for education and business."</p>
+                        <a href="{% url 'project_home' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Join the Movement -->
+<div class="section-container">
+    <div class="container section-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Join the Movement</h2>
+        <div class="card-grid">
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Volunteer</h3>
+                        <p class="card-text">Share your skills and time with our community projects. We welcome both local and international volunteers with a variety of expertise and backgrounds.</p>
+                        <a href="{% url 'volunteer_international' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-donate"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Donate</h3>
+                        <p class="card-text">Your contributions directly fund our education, innovation, and sustainable development initiatives. Every pound makes a difference in transforming lives.</p>
+                        <a href="{% url 'collab_donations' %}" class="btn btn-outline-primary">Donate Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Partner</h3>
+                        <p class="card-text">Organisations can join us through funding partnerships, knowledge sharing, or collaborative projects that amplify our collective impact.</p>
+                        <a href="{% url 'collab_sponsorship' %}" class="btn btn-outline-primary">Partner With Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Upcoming Events -->
+<div class="section-container highlight-bg">
+    <div class="container highlight-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Upcoming Events</h2>
+        <div class="card-grid">
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h4 class="card-title" style="color: #a7648a;">Community Garden Launch</h4>
+                        <p class="card-text">Arusha Region - 15 June</p>
+                        <a href="{% url 'project_table' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="card-title" style="color: #a7648a;">Education Fundraising Gala</h4>
+                        <p class="card-text">Dar es Salaam - 30 July</p>
+                        <a href="{% url 'collab_donations' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <h4 class="card-title" style="color: #a7648a;">Agricultural Innovation Workshop</h4>
+                        <p class="card-text">Mwanza - 10 August</p>
+                        <a href="{% url 'project_table' %}" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="section-container">
+    <div class="container section-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Connect With Us</h2>
+        <div class="card-grid">
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4 class="card-title" style="color: #a7648a;">Email</h4>
+                        <p class="card-text">kipepeotanzania@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4 class="card-title" style="color: #a7648a;">Phone</h4>
+                        <p class="card-text">+255 765 432 109</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <h4 class="card-title" style="color: #a7648a;">Social Media</h4>
+                        <p class="card-text">@kipepeo_tanzania on Instagram</p>
+                        <div class="d-flex justify-content-center gap-2 mt-2">
+                            <a href="https://www.facebook.com/p/Kipepeo-Tanzania-100085597188598/" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/kipepeo_tanzania" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/kipepeo-tanzania/" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

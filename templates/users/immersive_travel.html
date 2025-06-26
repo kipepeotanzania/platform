@@ -1,0 +1,660 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Immersive Travel | Kipepeo Tanzania{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section text-center py-5">
+    <div class="overlay"></div>
+    <div class="container hero-content position-relative">
+        <div data-aos="fade-up">
+            <h1 class="display-4 fw-bold mb-4 text-white">Experience Tanzania Like Never Before</h1>
+            <p class="lead mb-4 text-white" style="max-width: 800px; margin: 0 auto;">Join us for an unforgettable journey combining cultural immersion, community impact, and adventure.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNp8Un1govLfc9D1v8GwIczAP7JCycL01epJojf_xAm7Pvvg/viewform" target="_blank" class="btn btn-primary btn-lg">Apply Now</a>
+                <a href="#how-it-works" class="btn btn-outline-light btn-lg">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Why Choose Section -->
+<div class="section-container">
+    <div class="container section-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Why Choose Immersive Travel with Kipepeo Tanzania?</h2>
+        <div class="card-grid">
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Unique Experiences</h3>
+                        <p class="card-text">Dive deep into the heart of Tanzania and uncover its hidden treasures. From exploring the vast plains of the Serengeti to volunteering at local schools and engaging with indigenous tribes, every moment promises an enriching experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Meaningful Impact</h3>
+                        <p class="card-text">Leave a lasting impact on the communities you visit. Our immersive travel program allows you to contribute to sustainable development initiatives, such as education, healthcare, and conservation, making a difference where it matters most.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Cultural Immersion</h3>
+                        <p class="card-text">Immerse yourself in the vibrant cultures and traditions of Tanzania. Connect with local communities, learn Swahili, participate in traditional ceremonies, and gain insights into daily life that you won't find in guidebooks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="400">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Expert Guidance</h3>
+                        <p class="card-text">Travel with confidence knowing that you're in capable hands. Our experienced team of local guides and project coordinators will ensure your safety, comfort, and enjoyment throughout your journey.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrapper" data-aos="fade-up" data-aos-delay="500">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Transformative Experiences</h3>
+                        <p class="card-text">Prepare to be inspired, challenged, and transformed. Our immersive travel program goes beyond sightseeing to offer meaningful encounters that broaden your perspective, foster personal growth, and create lifelong memories.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Available Dates Section -->
+<div class="section-container">
+    <div class="container section-content">
+        <div class="row align-items-center justify-content-center mb-5">
+            <div class="col-md-8 text-center">
+                <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">2025 Travel Dates</h2>
+            </div>
+            <div class="col-md-4 text-center" data-aos="fade-up">
+                <div class="price-bubble">
+                    <div class="price-amount">$1,490</div>
+                    <div class="price-details">All-inclusive*</div>
+                    <div class="price-note">*Excludes flights, visa, and medical insurance</div>
+                </div>
+            </div>
+        </div>
+        <div class="travel-dates" data-aos="fade-up">
+            <div class="date-card">
+                <div class="date-month">February</div>
+                <div class="date-days">9-23</div>
+                <div class="date-group">Group 1</div>
+                <span class="date-status full">FULL</span>
+            </div>
+            <div class="date-card">
+                <div class="date-month">May-June</div>
+                <div class="date-days">31-9</div>
+                <div class="date-group">Group 2</div>
+                <span class="date-status full">FULL</span>
+            </div>
+            <div class="date-card">
+                <div class="date-month">July</div>
+                <div class="date-days">5-16</div>
+                <div class="date-group">Group 3</div>
+                <span class="date-status limited">3 spaces left</span>
+            </div>
+            <div class="date-card">
+                <div class="date-month">July</div>
+                <div class="date-days">17-28</div>
+                <div class="date-group">Group 4</div>
+                <span class="date-status available">Available</span>
+            </div>
+            <div class="date-card">
+                <div class="date-month">August</div>
+                <div class="date-days">1-12</div>
+                <div class="date-group">Group 5</div>
+                <span class="date-status available">Available</span>
+            </div>
+            <div class="date-card">
+                <div class="date-month">August</div>
+                <div class="date-days">16-27</div>
+                <div class="date-group">Group 6</div>
+                <span class="date-status limited">4 spaces left</span>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <div class="alert alert-info d-inline-block">
+                <i class="fas fa-info-circle me-2"></i>
+                Limited spaces available! Register soon to secure your preferred dates.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- How It Works Section -->
+<div class="section-container" id="how-it-works">
+    <div class="container section-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">How It Works</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-icon">
+                    <i class="fas fa-1"></i>
+                </div>
+                <div class="timeline-content">
+                    <h4>Application</h4>
+                    <p>Complete our online application form and schedule an interview to discuss your interests and skills.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-icon">
+                    <i class="fas fa-2"></i>
+                </div>
+                <div class="timeline-content">
+                    <h4>Orientation</h4>
+                    <p>Attend our comprehensive orientation program to prepare for your journey and understand your role.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-icon">
+                    <i class="fas fa-3"></i>
+                </div>
+                <div class="timeline-content">
+                    <h4>Immersion</h4>
+                    <p>Arrive in Tanzania and begin your immersive experience, working on projects and exploring the culture.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-icon">
+                    <i class="fas fa-4"></i>
+                </div>
+                <div class="timeline-content">
+                    <h4>Reflection</h4>
+                    <p>Share your experiences and insights, and become part of our global community of changemakers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- What You'll Do Section -->
+<div class="section-container highlight-bg">
+    <div class="container highlight-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">What You'll Do in Tanzania</h2>
+        
+        <!-- Safari Adventures -->
+        <div class="experience-category mb-5" data-aos="fade-up">
+            <h3 class="mb-4" style="color: #a7648a;"><i class="fas fa-paw me-2"></i>Safari Adventures</h3>
+            <div class="card-grid">
+                <div class="card-wrapper">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Serengeti National Park</h5>
+                            <p class="card-text">2 days exploring the endless plains and witnessing the incredible wildlife</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Ngorongoro Crater</h5>
+                            <p class="card-text">1 day adventure in the world's largest volcanic caldera</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Tarangire/Manyara</h5>
+                            <p class="card-text">1 day exploring either Tarangire's ancient baobabs or Lake Manyara's tree-climbing lions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cultural Immersion -->
+        <div class="experience-category mb-5" data-aos="fade-up">
+            <h3 class="mb-4" style="color: #a7648a;"><i class="fas fa-users me-2"></i>Cultural Immersion</h3>
+            <div class="card-grid">
+                <div class="card-wrapper">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Local Life Experience</h5>
+                            <p class="card-text">Tour around town, visit local markets, and experience daily Tanzanian life</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Traditional Workshops</h5>
+                            <p class="card-text">Participate in cultural activities and learn traditional crafts</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Lake Experience</h5>
+                            <p class="card-text">1 day exploring local lake life and activities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Community Impact -->
+        <div class="experience-category mb-5" data-aos="fade-up">
+            <h3 class="mb-4" style="color: #a7648a;"><i class="fas fa-heart me-2"></i>Community Impact</h3>
+            <div class="card-grid">
+                <div class="card-wrapper">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">School Volunteering</h5>
+                            <p class="card-text">2 days working with students and teachers at our partner school</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Community Projects</h5>
+                            <p class="card-text">Contribute to ongoing sustainable development initiatives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tribal Experiences -->
+        <div class="experience-category" data-aos="fade-up">
+            <h3 class="mb-4" style="color: #a7648a;"><i class="fas fa-fire me-2"></i>Tribal Experiences</h3>
+            <div class="card-grid">
+                <div class="card-wrapper">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Maasai & Hadzabe Tribes</h5>
+                            <p class="card-text">1 day immersive experience learning about traditional ways of life</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Accommodation Section -->
+<div class="section-container">
+    <div class="container section-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Your Home Away From Home</h2>
+        <div class="row align-items-center" data-aos="fade-up">
+            <div class="col-md-6">
+                <img src="{% static 'images/accommodation.jpg' %}" class="img-fluid rounded shadow" alt="Jua Manyara Lodge" style="width: 100%; height: 400px; object-fit: cover;">
+            </div>
+            <div class="col-md-6">
+                <div class="p-4">
+                    <h3 class="mb-3" style="color: #a7648a;">Accommodation Details</h3>
+                    <p class="mb-4">Experience authentic Tanzanian hospitality at our comfortable base in the heart of Tanzania, Jua Manyara Lodge & Camping. The lodge perfectly blends modern amenities with traditional charm, creating an ideal environment for cultural immersion and community connection. The accomodation of this amazing experience will be based on:</p>
+                    
+                    <div class="accommodation-features mb-4">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-home me-2" style="color: #a7648a;"></i> Shared rooms with fellow travelers fostering community spirit</li>
+                            <li class="mb-2"><i class="fas fa-campground me-2" style="color: #a7648a;"></i> Safari tents during wildlife excursions</li>
+                            <li class="mb-2"><i class="fas fa-star me-2" style="color: #a7648a;"></i> Traditional Tanzanian hospitality</li>
+                        </ul>
+                        <p class="mb-4">If you have any specific accommodation preferences or requirements, please inform us in advance. Kindly note that any adjustments to accommodation arrangements may impact the program price.</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="https://juamanyara.wixsite.com/tanzanialodge" target="_blank" class="btn btn-outline-primary">
+                            <i class="fas fa-external-link-alt me-2"></i>Visit Lodge Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="section-container highlight-bg">
+    <div class="container highlight-content text-center">
+        <h2 class="mb-4" style="color: #aa9a99;" data-aos="fade-up">Ready for Your Tanzanian Adventure?</h2>
+        <p class="lead mb-4" data-aos="fade-up">Join us for this life-changing experience!</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNp8Un1govLfc9D1v8GwIczAP7JCycL01epJojf_xAm7Pvvg/viewform" target="_blank" class="btn btn-primary btn-lg" data-aos="fade-up">Apply Now</a>
+    </div>
+</div>
+
+<style>
+/* Base styles */
+.section-container {
+    padding: 4rem 0;
+}
+
+.section-container.highlight-bg {
+    background-color: #f8f5f6;
+}
+
+/* Hero section */
+.hero-section {
+    background-image: url('{% static "images/immersive-hero.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Card Grid Layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.card-grid.two-columns {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    justify-content: center;
+}
+
+.card-wrapper {
+    height: 100%;
+}
+
+.card {
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(167, 100, 138, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(167, 100, 138, 0.2);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #a7648a;
+    border-color: #a7648a;
+}
+
+.btn-primary:hover {
+    background-color: #8a4f70;
+    border-color: #8a4f70;
+}
+
+.btn-outline-primary {
+    color: #a7648a;
+    border-color: #a7648a;
+}
+
+.btn-outline-primary:hover {
+    background-color: #a7648a;
+    border-color: #a7648a;
+    color: white;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #a7648a;
+}
+
+/* Travel Dates */
+.travel-dates {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.date-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(167, 100, 138, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.date-card:hover {
+    transform: translateY(-5px);
+}
+
+.date-month {
+    color: #a7648a;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.date-days {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #aa9a99;
+    margin-bottom: 0.5rem;
+}
+
+.date-group {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.date-status {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.date-status.full {
+    background-color: #aa9a99;
+    color: white;
+}
+
+.date-status.limited {
+    background-color: #a7648a;
+    color: white;
+}
+
+.date-status.available {
+    background-color: #6c8a64;
+    color: white;
+}
+
+/* Price Bubble */
+.price-bubble {
+    background: linear-gradient(135deg, #a7648a, #aa9a99);
+    color: white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(167, 100, 138, 0.2);
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease;
+}
+
+.price-bubble:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #a7648a;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    width: 50%;
+    padding-right: 2rem;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: auto;
+    padding-right: 0;
+    padding-left: 2rem;
+}
+
+.timeline-icon {
+    position: absolute;
+    right: -1rem;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #a7648a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    right: auto;
+    left: -1rem;
+}
+
+.timeline-content {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(167, 100, 138, 0.1);
+}
+
+.timeline-content h4 {
+    color: #a7648a;
+    margin-bottom: 0.5rem;
+}
+
+/* Icon Wrapper */
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(167, 100, 138, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.icon-wrapper i {
+    font-size: 1.5rem;
+    color: #a7648a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .section-container {
+        padding: 3rem 0;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .travel-dates {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline::before {
+        left: 1rem;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 3rem;
+        padding-right: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+        padding-left: 3rem;
+    }
+    
+    .timeline-icon {
+        left: 0;
+        right: auto;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-icon {
+        left: 0;
+    }
+    
+    .price-bubble {
+        width: 180px;
+        height: 180px;
+        margin-top: 20px;
+    }
+}
+</style>
+{% endblock %} 

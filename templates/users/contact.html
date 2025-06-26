@@ -1,0 +1,103 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block title %}Contact Us | Kipepeo Tanzania{% endblock %}
+
+{% block content %}
+<!-- Contact Form Section -->
+<div class="section-container">
+    <div class="container section-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Get in Touch</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8" data-aos="fade-up">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                
+                <form method="post" class="contact-form">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Information Section -->
+<div class="section-container highlight-bg">
+    <div class="container highlight-content">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Our Information</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Location</h3>
+                        <p class="card-text">Mto wa Mbu, Tanzania</p>
+                        <a href="https://juamanyara.wixsite.com/school" target="_blank" class="btn btn-outline-primary">View on Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Email</h3>
+                        <p class="card-text">kipepeotanzania@gmail.com</p>
+                        <a href="mailto:kipepeotanzania@gmail.com" class="btn btn-outline-primary">Send Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="card-title" style="color: #a7648a;">Phone</h3>
+                        <p class="card-text">+255 765 432 109</p>
+                        <a href="tel:+255765432109" class="btn btn-outline-primary">Call Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Social Media Section -->
+<div class="section-container">
+    <div class="container section-content text-center">
+        <h2 class="section-title" style="color: #aa9a99;" data-aos="fade-up">Connect With Us</h2>
+        <div class="d-flex justify-content-center gap-3" data-aos="fade-up">
+            <a href="https://www.facebook.com/p/Kipepeo-Tanzania-100085597188598/" target="_blank" class="btn btn-outline-primary"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/kipepeo_tanzania" target="_blank" class="btn btn-outline-primary"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/kipepeo-tanzania/" target="_blank" class="btn btn-outline-primary"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %} 
