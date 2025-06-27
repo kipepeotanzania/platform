@@ -14,6 +14,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -22,15 +23,24 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => { setMenuOpen(false); }, [location.pathname]);
+
   return (
     <nav className={`navbar${scrolled ? ' navbar-scrolled' : ''}`}> 
-      <div className="navbar-logo">
-        <Link to="/" className="navbar-logo-link" aria-label="Kipepeo Home">
-          <img src={logo} alt="Kipepeo logo" className="navbar-logo-img" />
-          <span className="logo-placeholder">Kipepeo</span>
-        </Link>
+      <div className="navbar-inner">
+        <div className="navbar-logo">
+          <Link to="/" className="navbar-logo-link" aria-label="Kipepeo Home">
+            <img src={logo} alt="Kipepeo logo" className="navbar-logo-img" />
+            <span className="logo-placeholder">Kipepeo</span>
+          </Link>
+        </div>
+        <button className="navbar-burger" aria-label="Open menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(m => !m)}>
+          <span className="burger-bar"></span>
+          <span className="burger-bar"></span>
+          <span className="burger-bar"></span>
+        </button>
       </div>
-      <ul className="navbar-links">
+      <ul className={`navbar-links${menuOpen ? ' open' : ''}`}> 
         {navLinks.map(link => (
           <li key={link.name}>
             <Link to={link.path} className={location.pathname === link.path ? 'active' : ''}>
@@ -39,6 +49,7 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+      {menuOpen && <div className="navbar-backdrop" onClick={()=>setMenuOpen(false)}></div>}
     </nav>
   );
 } 
