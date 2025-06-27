@@ -6,6 +6,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChild, faPeopleGroup, faLeaf, faBed, faLaptop, faChalkboardTeacher, faBook, faUtensils, faFutbol, faVenus, faHandsHelping, faPlane, faDonate } from '@fortawesome/free-solid-svg-icons';
 import myPhoto1 from '../assets/myphoto1.jpg';
+import logo from '../assets/logo.png';
 
 const projectCards = [
   { icon: faBed, title: 'Dormitories' },
@@ -26,17 +27,26 @@ export default function Home() {
     aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Helper for image fallback
+  const handleImgError = (e) => {
+    e.target.onerror = null;
+    e.target.src =
+      'data:image/svg+xml;utf8,<svg width="420" height="280" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="%23b5eeb3"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="24" fill="%23a7648a" font-family="Poppins, Nunito, sans-serif">Image not found</text></svg>';
+  };
+
   return (
     <main style={{width:'100vw', overflowX:'hidden', background:'#fff'}}>
       {/* Hero Section */}
       <section style={{
-        minHeight: '100vh',
+        minHeight: '90vh',
         width: '100vw',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
-        background: 'linear-gradient(120deg, #b5eeb3 0%, #a7648a 100%)',
+        background: `linear-gradient(120deg, #b5eeb3 0%, #a7648a 100%), url(${logo}) center/40% no-repeat`,
+        backgroundBlendMode: 'overlay',
+        opacity: 1,
         overflow: 'hidden',
         padding: 0
       }}>
@@ -66,7 +76,7 @@ export default function Home() {
           <motion.button whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }} onClick={()=>navigate('/about')} style={{background:'#a7648a', color:'#fff', border:'none', borderRadius:30, padding:'0.8rem 2rem', fontWeight:700, fontSize:'1rem', fontFamily:'Poppins, Nunito, sans-serif', cursor:'pointer', boxShadow:'0 2px 8px rgba(167,100,138,0.10)', transition:'background 0.2s'}}>Meet the Team</motion.button>
         </div>
         <div data-aos="fade-left" style={{flex:'1 1 350px', minWidth:280, maxWidth:600, display:'flex', alignItems:'center', justifyContent:'center', padding:'clamp(1rem, 5vw, 3rem)'}}>
-          <img src={myPhoto1} alt="Kipepeo Team" style={{width:'100%', maxWidth:420, borderRadius:18, boxShadow:'0 4px 24px rgba(167,100,138,0.10)'}}/>
+          <img src={myPhoto1} alt="Kipepeo Team" style={{width:'100%', maxWidth:420, borderRadius:18, boxShadow:'0 4px 24px rgba(167,100,138,0.10)'}} onError={handleImgError}/>
         </div>
       </section>
 

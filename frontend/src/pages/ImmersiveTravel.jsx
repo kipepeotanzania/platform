@@ -82,14 +82,14 @@ export default function ImmersiveTravel() {
             More Than a Safari — A Journey With Purpose
           </h1>
           <p style={{fontFamily:'Open Sans, Inter, sans-serif', fontSize:'1.2rem', color:'#fff', marginBottom:'2rem', maxWidth:600, marginLeft:'auto', marginRight:'auto', textShadow:'0 1px 8px #a7648a'}}>
-            Travel with meaning. 100% of proceeds go directly to support our school and orphanage in Tanzania.
+            Travel with meaning. The profits go directly to our projects in Tanzania.
           </p>
           <motion.button whileHover={{ scale: 1.07 }} whileTap={{ scale: 0.97 }} onClick={scrollToWhatIs} style={{background:'#b5eeb3', color:'#a7648a', border:'none', borderRadius:30, padding:'1rem 2.5rem', fontWeight:700, fontSize:'1.1rem', fontFamily:'Poppins, Nunito, sans-serif', cursor:'pointer', boxShadow:'0 4px 16px rgba(167,100,138,0.10)', transition:'background 0.2s'}}>Start Your Journey</motion.button>
         </motion.div>
       </section>
 
       {/* What is Immersive Travel? */}
-      <section ref={whatIsRef} style={{width:'100vw', background:'#fff', display:'flex', flexWrap:'wrap', alignItems:'center', justifyContent:'center', padding:'clamp(2rem, 8vw, 5rem) 0'}}>
+      <section ref={whatIsRef} style={{width:'100vw', background:'#fff', display:'flex', flexWrap:'wrap', alignItems:'center', justifyContent:'center', padding:'clamp(2rem, 8vw, 2rem) 0'}}>
         <div data-aos="fade-right" style={{flex:'1 1 350px', minWidth:280, maxWidth:600, padding:'clamp(1rem, 5vw, 3rem)'}}>
           <h2 style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'2rem', color:'#a7648a', marginBottom:'1.2rem'}}>What is Immersive Travel?</h2>
           <p style={{fontFamily:'Open Sans, Inter, sans-serif', fontSize:'1.1rem', color:'#000', marginBottom:'1.5rem'}}>
@@ -153,10 +153,10 @@ export default function ImmersiveTravel() {
       </section>
 
       {/* Activities You'll Experience */}
-      <section style={{width:'100vw', background:'#fff', padding:'clamp(2rem, 8vw, 5rem) 0'}}>
+      <section style={{width:'100vw', background:'#fff', padding:'clamp(2rem, 8vw, 2rem) 0'}}>
         <h2 data-aos="fade-up" style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'2rem', color:'#a7648a', textAlign:'center', marginBottom:'1.2rem'}}>Sample Itinerary</h2>
         <p data-aos="fade-up" data-aos-delay="100" style={{fontFamily:'Open Sans, Inter, sans-serif', fontSize:'1rem', color:'#a7648a', textAlign:'center', marginBottom:'2.5rem', maxWidth:600, marginLeft:'auto', marginRight:'auto', background:'#b5eeb3', borderRadius:12, padding:'0.8rem 1.2rem'}}>This is a sample itinerary and may be subject to change until final confirmation of the trip.</p>
-        <div style={{display:'flex', flexDirection:'column', gap:'2.5rem', maxWidth:700, margin:'0 auto', position:'relative', padding:'0 clamp(1rem, 5vw, 3rem)', marginBottom:'1.5rem'}}>
+        <div style={{display:'flex', flexDirection:'column', gap:'2.5rem', maxWidth:700, margin:'0 auto', position:'relative', padding:'0 clamp(1rem, 5vw, 3rem)', marginBottom:'1rem'}}>
           {[
             { day: 'Day 1', title: 'Departure', desc: 'Your adventure begins! Head to the airport and board your flight to Tanzania.' },
             { day: 'Day 2', title: 'Arrival in Tanzania', desc: 'Welcome to Mto wa Mbu! Settle into your accommodation at Jua Manyara Lodge, get a local SIM card, and rest for the days ahead.', img: it5 },
@@ -211,7 +211,7 @@ export default function ImmersiveTravel() {
       </section>
 
       {/* What's Not Included */}
-      <section style={{width:'100vw', background:'#fff', padding:'clamp(2rem, 8vw, 5rem) 0'}}>
+      <section style={{width:'100vw', background:'#fff', padding:'clamp(2rem, 8vw, 2rem) 0'}}>
         <h2 data-aos="fade-up" style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'2rem', color:'#a7648a', textAlign:'center', marginBottom:'2.5rem'}}>What's Not Included</h2>
         <ul style={{listStyle:'none', padding:0, margin:0, maxWidth:600, marginLeft:'auto', marginRight:'auto', display:'flex', flexWrap:'wrap', gap:'1.5rem', justifyContent:'center'}}>
           {notIncluded.map((item, i) => (

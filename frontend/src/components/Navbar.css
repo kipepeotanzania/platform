@@ -34,6 +34,27 @@
   color: var(--color-accent);
 }
 
+.navbar-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  height: 2.2rem;
+  max-width: 2.2rem;
+  margin-right: 0.7rem;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(167,100,138,0.07);
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.navbar-logo-link:hover .logo-placeholder {
+  color: var(--color-accent);
+}
+
 .navbar-links {
   list-style: none;
   display: flex;
