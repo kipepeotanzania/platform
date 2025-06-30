@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -34,10 +36,8 @@ export default function Navbar() {
             <span className="logo-placeholder">Kipepeo</span>
           </Link>
         </div>
-        <button className="navbar-burger" aria-label="Open menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(m => !m)}>
-          <span className="burger-bar"></span>
-          <span className="burger-bar"></span>
-          <span className="burger-bar"></span>
+        <button className={`navbar-burger${menuOpen ? ' menu-open' : ''}`} aria-label="Open menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(m => !m)}>
+          <FontAwesomeIcon icon={faBars} style={{ fontSize: '2rem', color: 'var(--color-primary)' }} />
         </button>
       </div>
       <ul className={`navbar-links${menuOpen ? ' open' : ''}`}> 

@@ -25,21 +25,21 @@ export default function ContactUs() {
       <section data-aos="fade-up" style={{padding: 'clamp(3rem, 8vw, 5rem) 0', background: '#fff', color: '#000', width: '100%'}}>
         <div style={{maxWidth:500, margin:'0 auto', background:'#f8f8f8', borderRadius:18, boxShadow:'0 2px 16px rgba(167,100,138,0.07)', padding:'2.5rem clamp(1rem, 5vw, 3rem)', display:'flex', flexDirection:'column', alignItems:'center', gap:'2.2rem'}}>
           {/* Email */}
-          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} style={{width:'100%', textAlign:'center'}}>
+          <motion.div initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.01 }} style={{width:'100%', textAlign:'center'}}>
             <a href="mailto:kipepeoaptanzania@gmail.com" style={{display:'inline-flex', alignItems:'center', gap:10, fontFamily:'Open Sans, Inter, sans-serif', fontSize:'1.1rem', color:'#a7648a', textDecoration:'underline', fontWeight:600}}>
               <FontAwesomeIcon icon={faEnvelope} style={{fontSize:'1.5rem', color:'#a7648a'}}/>
               kipepeoaptanzania@gmail.com
             </a>
           </motion.div>
           {/* Instagram */}
-          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.1 }} style={{width:'100%', textAlign:'center'}}>
+          <motion.div initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.01 }} style={{width:'100%', textAlign:'center'}}>
             <a href="https://instagram.com/kipepeo_tanzania" target="_blank" rel="noopener noreferrer" style={{display:'inline-flex', alignItems:'center', gap:10, fontFamily:'Open Sans, Inter, sans-serif', fontSize:'1.1rem', color:'#a7648a', textDecoration:'underline', fontWeight:600}}>
               <FontAwesomeIcon icon={faInstagram} style={{fontSize:'1.5rem', color:'#a7648a'}}/>
               @kipepeo_tanzania
             </a>
           </motion.div>
           {/* Location Note */}
-          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }} style={{width:'100%', textAlign:'center'}}>
+          <motion.div initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.01 }} style={{width:'100%', textAlign:'center'}}>
             <div style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'1.15rem', color:'#a7648a', marginBottom:8}}>Location</div>
             <div style={{fontFamily:'Open Sans, Inter, sans-serif', fontSize:'1.1rem', color:'#000', background:'#b5eeb3', borderRadius:10, padding:'1rem 1.2rem', display:'inline-block', fontWeight:500, boxShadow:'0 2px 8px rgba(167,100,138,0.06)'}}>
               📍 We are located in Mto wa Mbu, less than 5 minutes from Jua Manyara Lodge and Camping.

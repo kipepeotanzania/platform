@@ -4,32 +4,32 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeAfrica, faHome, faHandsHelping, faBinoculars, faPlane, faShieldAlt, faWineGlassAlt, faSyringe, faMapMarkedAlt, faSchool, faBook, faUtensils, faVenus, faBed } from '@fortawesome/free-solid-svg-icons';
-// import ithero from '../assets/ithero.jpg';
-// import it1 from '../assets/it1.jpg';
-// import it2 from '../assets/it2.jpg';
-// import it3 from '../assets/it3.jpg';
-// import it4 from '../assets/it4.jpg';
-// import it5 from '../assets/it5.jpg';
-// import it6 from '../assets/it6.jpg';
-// import it7 from '../assets/it7.jpg';
-// import it8 from '../assets/it8.jpg';
-// import it9 from '../assets/it9.jpg';
-// import it10 from '../assets/it10.jpg';
-// import it11 from '../assets/it11.jpg';
-// import it12 from '../assets/it12.jpg';
-// import it13 from '../assets/it13.jpg';
-// import itg1 from '../assets/itg1.jpg';
-// import itg2 from '../assets/itg2.jpg';
-// import itg3 from '../assets/itg3.jpg';
-// import itg4 from '../assets/itg4.jpg';
-// import itg5 from '../assets/itg5.jpg';
-// import itg6 from '../assets/itg6.jpg';
-// import itg7 from '../assets/itg7.jpg';
-// import itg8 from '../assets/itg8.jpg';
-// import itg9 from '../assets/itg9.jpg';
-// import itg10 from '../assets/itg10.jpg';
-// import itg11 from '../assets/itg11.jpg';
-// import itg12 from '../assets/itg12.jpg';
+import ithero from '../assets/ithero.jpg';
+import it1 from '../assets/it1.jpg';
+import it2 from '../assets/it2.jpg';
+import it3 from '../assets/it3.jpg';
+import it4 from '../assets/it4.jpg';
+import it5 from '../assets/it5.jpg';
+import it6 from '../assets/it6.jpg';
+import it7 from '../assets/it7.jpg';
+import it8 from '../assets/it8.jpg';
+import it9 from '../assets/it9.jpg';
+import it10 from '../assets/it10.jpg';
+import it11 from '../assets/it11.jpg';
+import it12 from '../assets/it12.jpg';
+import it13 from '../assets/it13.jpg';
+import itg1 from '../assets/itg1.jpg';
+import itg2 from '../assets/itg2.jpg';
+import itg3 from '../assets/itg3.jpg';
+import itg4 from '../assets/itg4.jpg';
+import itg5 from '../assets/itg5.jpg';
+import itg6 from '../assets/itg6.jpg';
+import itg7 from '../assets/itg7.jpg';
+import itg8 from '../assets/itg8.jpg';
+import itg9 from '../assets/itg9.jpg';
+import itg10 from '../assets/itg10.jpg';
+import itg11 from '../assets/itg11.jpg';
+import itg12 from '../assets/itg12.jpg';
 
 const differenceCards = [
   { icon: faGlobeAfrica, img: 'https://placehold.co/220x140?text=Impact', title: 'Impact-Driven', text: 'All funds go directly to educational and community initiatives.' },
@@ -56,7 +56,7 @@ const notIncluded = [
   { icon: faMapMarkedAlt, text: 'Optional excursions not in itinerary' },
 ];
 
-const galleryImages = [/* itg1, itg2, itg3, itg4, itg5, itg6, itg7, itg8, itg9, itg10, itg11, itg12 */];
+const galleryImages = [itg1, itg2, itg3, itg4, itg5, itg6, itg7, itg8, itg9, itg10, itg11, itg12];
 
 const handleImgError = (e) => {
   e.target.onerror = null;
@@ -71,7 +71,6 @@ export default function ImmersiveTravel() {
 
   return (
     <main style={{width:'100vw', overflowX:'hidden', background:'#fff'}}>
-      {/* Responsive styles for itinerary timeline */}
       <style>{`
         @media (max-width: 700px) {
           .itinerary-timeline-card {
@@ -92,9 +91,88 @@ export default function ImmersiveTravel() {
             object-fit: cover !important;
             aspect-ratio: 4/3 !important;
             box-shadow: 0 2px 8px rgba(167,100,138,0.08) !important;
+            display: none !important;
           }
           .itinerary-timeline-vertical {
             display: none !important;
+          }
+          .itinerary-timeline-card > div {
+            text-align: left !important;
+          }
+          .itinerary-timeline-card {
+            gap: 1rem !important;
+          }
+          .itinerary-timeline-card img {
+            margin-bottom: 1rem !important;
+          }
+          .itinerary-timeline-card > div > div {
+            margin-bottom: 0.5rem !important;
+          }
+          .itinerary-timeline-card > div > div:last-child {
+            margin-bottom: 0 !important;
+          }
+          .itinerary-timeline-card {
+            border-radius: 14px !important;
+          }
+          section, .itinerary-timeline-card, .motion-div, .motion-section {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+          }
+          .gallery-section {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+          }
+          .gallery-section .motion-div {
+            max-width: 100% !important;
+            min-width: 0 !important;
+          }
+        }
+        @media (min-width: 701px) {
+          .itinerary-timeline-card {
+            flex-direction: row !important;
+            align-items: center !important;
+            gap: 2rem !important;
+            min-height: 180px !important;
+            padding: 1.5rem 1.2rem !important;
+            border-radius: 18px !important;
+            box-shadow: 0 2px 8px rgba(167,100,138,0.08) !important;
+            margin: 0 !important;
+          }
+          .itinerary-timeline-card:nth-child(even) {
+            flex-direction: row-reverse !important;
+            box-shadow: 8px 0 0 0 #b5eeb3 !important;
+            border-left: none !important;
+            border-right: 4px solid #b5eeb3 !important;
+          }
+          .itinerary-timeline-card:nth-child(odd) {
+            box-shadow: 0 0 0 8px #b5eeb3 !important;
+            border-left: 4px solid #b5eeb3 !important;
+            border-right: none !important;
+          }
+          .itinerary-timeline-img {
+            display: block !important;
+            width: 220px !important;
+            max-width: 220px !important;
+            min-width: 160px !important;
+            margin-bottom: 0 !important;
+            margin-right: 0 !important;
+            border-radius: 12px !important;
+            object-fit: cover !important;
+            aspect-ratio: 4/3 !important;
+            box-shadow: 0 2px 8px rgba(167,100,138,0.08) !important;
+          }
+          .itinerary-timeline-card > div {
+            text-align: left !important;
+            flex: 1 1 0 !important;
+            min-width: 0 !important;
+          }
+        }
+        @media (max-width: 500px) {
+          h1, h2, h3 {
+            font-size: 1.2rem !important;
+          }
+          .itinerary-timeline-card {
+            padding: 0.7rem 0.3rem !important;
           }
         }
       `}</style>
@@ -106,7 +184,7 @@ export default function ImmersiveTravel() {
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
-        // background: `url(${ithero}) center/cover no-repeat`,
+        background: `url(${ithero}) center/cover no-repeat`,
         overflow: 'hidden',
         padding: 0
       }}>
@@ -130,7 +208,7 @@ export default function ImmersiveTravel() {
           </p>
         </div>
         <div data-aos="fade-left" style={{flex:'1 1 350px', minWidth:280, maxWidth:600, display:'flex', alignItems:'center', justifyContent:'center', padding:'clamp(1rem, 5vw, 3rem)'}}>
-          {/* <img src={it1} alt="Immersive 1" style={{width:'100%', maxWidth:420, borderRadius:18, boxShadow:'0 4px 24px rgba(167,100,138,0.10)'}} onError={handleImgError}/> */}
+          <img src={it1} alt="Immersive 1" style={{width:'100%', maxWidth:420, borderRadius:18, boxShadow:'0 4px 24px rgba(167,100,138,0.10)'}} onError={handleImgError}/>
         </div>
       </section>
 
@@ -145,15 +223,15 @@ export default function ImmersiveTravel() {
           padding:'0 clamp(1rem, 5vw, 3rem)',
         }}>
           {[{
-            // img: it2,
+            img: it2,
             heading: 'Impact-Driven Experience',
             text: 'Immerse yourself in the rhythm of our community. Live the culture, meet the people, and make real human connections that last far beyond the journey.'
           }, {
-            // img: it3,
+            img: it3,
             heading: 'Give Back While You Travel',
             text: 'Volunteer at our local school and see your impact firsthand. 100% of the trip\'s benefits go directly to projects that empower and uplift.'
           }, {
-            // img: it4,
+            img: it4,
             heading: 'Explore the Heart of Tanzania',
             text: 'Go beyond the typical safari. Discover hidden waterfalls, meet indigenous tribes, and experience the raw beauty of Tanzania\'s landscapes.'
           }].map((item, i) => (
@@ -177,9 +255,7 @@ export default function ImmersiveTravel() {
                 transition:'box-shadow 0.2s',
               }}
             >
-              {/* item.img && (
-                <img src={item.img} alt={item.heading} style={{width:'100%', maxWidth:220, borderRadius:12, marginBottom:18, objectFit:'cover', aspectRatio:'4/3', background:'#eee'}} onError={handleImgError}/>
-              ) */}
+              <img src={item.img} alt={item.heading} style={{width:'100%', maxWidth:220, borderRadius:12, marginBottom:18, objectFit:'cover', aspectRatio:'4/3', background:'#eee'}} onError={handleImgError}/>
               <h3 style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'1.2rem', color:'#a7648a', margin:'1rem 0 0.5rem'}}>{item.heading}</h3>
               <p style={{fontFamily:'Open Sans, Inter, sans-serif', fontSize:'1rem', color:'#000'}}>{item.text}</p>
             </motion.div>
@@ -194,19 +270,18 @@ export default function ImmersiveTravel() {
         <div style={{display:'flex', flexDirection:'column', gap:'2.5rem', maxWidth:700, margin:'0 auto', position:'relative', padding:'0 clamp(1rem, 5vw, 3rem)', marginBottom:'1.5rem'}}>
           {[
             { day: 'Day 1', title: 'Departure', desc: 'Your adventure begins! Head to the airport and board your flight to Tanzania.' },
-            { day: 'Day 2', title: 'Arrival in Tanzania', desc: 'Welcome to Mto wa Mbu! Settle into your accommodation at Jua Manyara Lodge, get a local SIM card, and rest for the days ahead.' },
-            { day: 'Day 3', title: 'Local Life & Cultural Tour', desc: 'Explore banana plantations, enjoy a local lunch at Mama Africa House, meet different tribes, and taste traditional banana beer.' },
-            { day: 'Day 4', title: 'Safari in Tarangire National Park', desc: 'Discover one of Tanzania\'s most iconic parks filled with baobab trees, elephants, giraffes, lions, and more.' },
-            { day: 'Day 5', title: 'Volunteering & Secret Waterfall Trek', desc: 'Join educational activities at Kilimamoja School, then hike to a secluded waterfall sourced from Ngorongoro\'s highlands.' },
-            { day: 'Day 6', title: 'Hadzabe Tribe & Lake Eyasi Visit', desc: 'Meet the Hadzabe — a unique nomadic tribe — and learn about their traditions near the scenic Lake Eyasi.' },
-            { day: 'Day 7', title: 'Volunteering & Creative Experience', desc: 'Return to the school for sports day and student interaction. In the afternoon, enjoy a painting session with local artists.' },
-            { day: 'Days 8–10', title: 'Serengeti & Ngorongoro Safaris', desc: 'Embark on a 3-day safari through the vast Serengeti and the breathtaking Ngorongoro Crater. Sleep under the stars and experience Tanzania\'s wildlife like never before.' },
-            { day: 'Day 11', title: 'Farewell', desc: 'Say goodbye to the students and staff, return to the lodge to pack, and prepare for your flight home.' },
+            { day: 'Day 2', title: 'Arrival in Tanzania', desc: 'Welcome to Mto wa Mbu! Settle into your accommodation at Jua Manyara Lodge, get a local SIM card, and rest for the days ahead.', img: it5 },
+            { day: 'Day 3', title: 'Local Life & Cultural Tour', desc: 'Explore banana plantations, enjoy a local lunch at Mama Africa House, meet different tribes, and taste traditional banana beer.', img: it6 },
+            { day: 'Day 4', title: 'Safari in Tarangire National Park', desc: 'Discover one of Tanzania\'s most iconic parks filled with baobab trees, elephants, giraffes, lions, and more.', img: it7 },
+            { day: 'Day 5', title: 'Volunteering & Secret Waterfall Trek', desc: 'Join educational activities at Kilimamoja School, then hike to a secluded waterfall sourced from Ngorongoro\'s highlands.', img: it8 },
+            { day: 'Day 6', title: 'Hadzabe Tribe & Lake Eyasi Visit', desc: 'Meet the Hadzabe — a unique nomadic tribe — and learn about their traditions near the scenic Lake Eyasi.', img: it9 },
+            { day: 'Day 7', title: 'Volunteering & Creative Experience', desc: 'Return to the school for sports day and student interaction. In the afternoon, enjoy a painting session with local artists.', img: it10 },
+            { day: 'Days 8–10', title: 'Serengeti & Ngorongoro Safaris', desc: 'Embark on a 3-day safari through the vast Serengeti and the breathtaking Ngorongoro Crater. Sleep under the stars and experience Tanzania\'s wildlife like never before.', img: it11 },
+            { day: 'Day 11', title: 'Farewell', desc: 'Say goodbye to the students and staff, return to the lodge to pack, and prepare for your flight home.', img: it12 },
             { day: 'Day 12', title: 'Arrival Back Home', desc: 'Arrive home filled with unforgettable memories and stories from Tanzania.' },
           ].map((item, i, arr) => (
             <motion.div
               key={item.day}
-              className="itinerary-timeline-card"
               data-aos="fade-up"
               data-aos-delay={i*80}
               initial={{ opacity: 0, y: 40 }}
@@ -231,8 +306,9 @@ export default function ImmersiveTravel() {
                 zIndex:2,
               }}
             >
-              {/* Uncomment and use real images if available */}
-              {/* <img src={item.img} alt={item.title} className="itinerary-timeline-img" onError={handleImgError}/> */}
+              {item.img && (
+                <img src={item.img} alt={item.title} className="itinerary-timeline-img" onError={handleImgError}/>
+              )}
               <div style={{flex:1, minWidth:0}}>
                 <div style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'1.1rem', color:'#a7648a', marginBottom:4}}>{item.day}</div>
                 <div style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'1.2rem', color:'#000', marginBottom:8}}>{item.title}</div>
@@ -241,7 +317,7 @@ export default function ImmersiveTravel() {
             </motion.div>
           ))}
           {/* Timeline vertical line */}
-          <div className="itinerary-timeline-vertical" aria-hidden style={{position:'absolute', left:'50%', top:0, bottom:0, width:4, background:'#b5eeb3', zIndex:1, transform:'translateX(-50%)', borderRadius:2, opacity:0.5}}></div>
+          <div aria-hidden style={{position:'absolute', left:'50%', top:0, bottom:0, width:4, background:'#b5eeb3', zIndex:1, transform:'translateX(-50%)', borderRadius:2, opacity:0.5}}></div>
         </div>
       </section>
 
@@ -259,7 +335,7 @@ export default function ImmersiveTravel() {
       </section>
 
       {/* Travel That Funds Education */}
-      <section style={{width:'100vw', background:'#a7648a', padding:'clamp(2rem, 8vw, 5rem) 0', color:'#fff', position:'relative'}}>
+      <section style={{width:'100vw', background:`url(${it13}) center/cover no-repeat, #a7648a`, padding:'clamp(2rem, 8vw, 5rem) 0', color:'#fff', position:'relative'}}>
         <div style={{background:'rgba(167,100,138,0.7)', borderRadius:18, padding:'2rem clamp(1rem, 5vw, 3rem)', maxWidth:900, margin:'0 auto'}}>
           <h2 data-aos="fade-up" style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'2rem', color:'#fff', textAlign:'center', marginBottom:'2rem'}}>Travel That Funds Education</h2>
           <p style={{fontFamily:'Open Sans, Inter, sans-serif', fontSize:'1.1rem', color:'#fff', marginBottom:'1.5rem', textAlign:'center'}}>
@@ -288,7 +364,11 @@ export default function ImmersiveTravel() {
       <section style={{width:'100vw', background:'#fff', padding:'clamp(2rem, 8vw, 5rem) 0'}}>
         <h2 data-aos="fade-up" style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'2rem', color:'#a7648a', textAlign:'center', marginBottom:'2.5rem'}}>See the Journey</h2>
         <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', gap:'1.5rem', padding:'0 clamp(1rem, 5vw, 3rem)'}}>
-          {/* Gallery removed due to missing images */}
+          {galleryImages.map((img, i) => (
+            <motion.div key={img} data-aos="fade-up" data-aos-delay={i*60} whileHover={{ scale: 1.04 }} style={{overflow:'hidden', borderRadius:16, boxShadow:'0 2px 8px rgba(167,100,138,0.08)', cursor:'pointer', position:'relative', maxWidth:260, width:'100%', aspectRatio:'4/3', background:'#eee', margin:'0 auto'}}>
+              <img src={img} alt={`Gallery ${i+1}`} style={{width:'100%', height:'100%', display:'block', objectFit:'cover', borderRadius:16, aspectRatio:'4/3'}} onError={handleImgError}/>
+            </motion.div>
+          ))}
         </div>
       </section>
     </main>
