@@ -1,0 +1,22 @@
+# Environment variables
+.env
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific
+db.sqlite3
+/staticfiles
+
+# VS Code and system files
+.vscode/
+.DS_Store
+
+# Logs
+*.log
+
+# Node and frontend
+node_modules/
+dist/
