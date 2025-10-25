@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "travel": "Viajes Inmersivos",
+    "volunteering": "Voluntariado",
+    "projects": "Proyectos",
+    "about": "Sobre Nosotros",
+    "contact": "Contáctanos",
+    "toggleLabel": "Cambiar idioma",
+    "english": "Inglés",
+    "spanish": "Español"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "Home",
+    "travel": "Immersive Travel",
+    "volunteering": "Volunteering",
+    "projects": "Projects",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "toggleLabel": "Switch language",
+    "english": "English",
+    "spanish": "Spanish"
+  }
+}
