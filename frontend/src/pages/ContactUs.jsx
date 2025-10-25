@@ -1,23 +1,46 @@
 import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
+
+const contactCopy = {
+  en: {
+    title: 'Contact Us',
+    subtitle: "We'd love to hear from you!",
+    emailLabel: 'Email us',
+    instagramLabel: 'Follow us on Instagram',
+    locationLabel: 'Location',
+    locationText: '📍 We are located in Mto wa Mbu, less than 5 minutes from Jua Manyara Lodge and Camping.',
+  },
+  es: {
+    title: 'Contáctanos',
+    subtitle: '¡Nos encantaría saber de ti!',
+    emailLabel: 'Escríbenos',
+    instagramLabel: 'Síguenos en Instagram',
+    locationLabel: 'Ubicación',
+    locationText: '📍 Estamos en Mto wa Mbu, a menos de 5 minutos del Jua Manyara Lodge and Camping.',
+  },
+};
 
 export default function ContactUs() {
   useEffect(() => { AOS.init({ duration: 1000, once: true }); }, []);
+  const { i18n } = useTranslation();
+  const currentLanguage = useMemo(() => (i18n.language ? i18n.language.split('-')[0] : 'en'), [i18n.language]);
+  const content = contactCopy[currentLanguage] || contactCopy.en;
   return (
     <main style={{width:'100vw', overflowX:'hidden', background:'#fff'}}>
       {/* Header Section */}
       <section className="contact-hero" style={{background: 'linear-gradient(120deg, #b5eeb3 0%, #a7648a 100%)', color: '#fff', padding: '4rem 0', textAlign: 'center', width: '100%'}}>
         <div style={{paddingLeft: 'clamp(1rem, 5vw, 3rem)', paddingRight: 'clamp(1rem, 5vw, 3rem)'}}>
           <motion.h1 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} style={{fontFamily: 'Poppins, Nunito, Quicksand, sans-serif', fontSize: '2.5rem', fontWeight: 800, letterSpacing:'-1px', textShadow:'0 2px 16px #a7648a'}}>
-            Contact Us
+            {content.title}
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3 }} style={{fontSize: '1.2rem', marginTop: '1.2rem', fontWeight: 500, fontFamily:'Open Sans, Inter, sans-serif', color:'#fff'}}>
-            We'd love to hear from you!
+            {content.subtitle}
           </motion.p>
         </div>
       </section>
@@ -40,9 +63,9 @@ export default function ContactUs() {
           </motion.div>
           {/* Location Note */}
           <motion.div initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.01 }} style={{width:'100%', textAlign:'center'}}>
-            <div style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'1.15rem', color:'#a7648a', marginBottom:8}}>Location</div>
+            <div style={{fontFamily:'Poppins, Nunito, sans-serif', fontWeight:700, fontSize:'1.15rem', color:'#a7648a', marginBottom:8}}>{content.locationLabel}</div>
             <div style={{fontFamily:'Open Sans, Inter, sans-serif', fontSize:'1.1rem', color:'#000', background:'#b5eeb3', borderRadius:10, padding:'1rem 1.2rem', display:'inline-block', fontWeight:500, boxShadow:'0 2px 8px rgba(167,100,138,0.06)'}}>
-              📍 We are located in Mto wa Mbu, less than 5 minutes from Jua Manyara Lodge and Camping.
+              {content.locationText}
             </div>
           </motion.div>
         </div>
