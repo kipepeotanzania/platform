@@ -1,0 +1,163 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  MEMBER
+  VOLUNTEER
+  DONOR
+  TRAVELER
+}
+
+enum ApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum InvitationStatus {
+  SENT
+  COMPLETED
+  EXPIRED
+}
+
+enum InfoRequestStatus {
+  PENDING
+  RESPONDED
+}
+
+model User {
+  id             String    @id @default(uuid())
+  email          String    @unique
+  password       String?
+  firstName      String
+  lastName       String
+  role           Role
+  isActive       Boolean   @default(false)
+  avatarUrl      String?
+  bio            String?
+  interests      String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  memberProfile  MemberProfile?
+  volunteerApp   VolunteerApplication?
+  travelerApp    TravelerApplication?
+  donations      Donation[]
+  approvalLogs   ApprovalLog[] @relation("UserApprovalLogs")
+  invitations    Invitation[]
+  infoResponses  InfoRequest[] @relation("InfoRequestResponder")
+}
+
+model MemberProfile {
+  id               String            @id @default(uuid())
+  firstName        String
+  lastName         String
+  email            String
+  phone            String?
+  message          String?
+  contributionType String?
+  paymentMethod    String?
+  status           ApplicationStatus @default(PENDING)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  user             User?             @relation(fields: [userId], references: [id])
+  userId           String?           @unique
+}
+
+model VolunteerApplication {
+  id          String            @id @default(uuid())
+  firstName   String
+  lastName    String
+  email       String
+  phone       String?
+  institution String?
+  contact     String?
+  area        String?
+  modality    String?
+  message     String?
+  status      ApplicationStatus @default(PENDING)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  user        User?             @relation(fields: [userId], references: [id])
+  userId      String?           @unique
+}
+
+model TravelerApplication {
+  id        String            @id @default(uuid())
+  firstName String
+  lastName  String
+  email     String
+  phone     String?
+  dates     String?
+  message   String?
+  status    ApplicationStatus @default(PENDING)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+  user      User?             @relation(fields: [userId], references: [id])
+  userId    String?           @unique
+}
+
+model Donation {
+  id        String   @id @default(uuid())
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+  donorName String?
+  email     String?
+  amount    Float
+  currency  String   @default("EUR")
+  project   String?
+  method    String?
+  message   String?
+  createdAt DateTime @default(now())
+}
+
+model Invitation {
+  id          String           @id @default(uuid())
+  email       String
+  role        Role
+  token       String           @unique
+  status      InvitationStatus @default(SENT)
+  expiresAt   DateTime
+  createdAt   DateTime         @default(now())
+  completedAt DateTime?
+  user        User?            @relation(fields: [userId], references: [id])
+  userId      String?
+}
+
+model ApprovalLog {
+  id         String            @id @default(uuid())
+  admin      User              @relation("UserApprovalLogs", fields: [adminId], references: [id])
+  adminId    String
+  entityType String
+  entityId   String
+  action     ApplicationStatus
+  notes      String?
+  createdAt  DateTime          @default(now())
+}
+
+model PersonNote {
+  id        String   @id @default(uuid())
+  userId    String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model InfoRequest {
+  id             String             @id @default(uuid())
+  name           String
+  email          String
+  subject        String?
+  message        String
+  status         InfoRequestStatus  @default(PENDING)
+  createdAt      DateTime           @default(now())
+  respondedAt    DateTime?
+  respondedBy    User?              @relation("InfoRequestResponder", fields: [respondedById], references: [id])
+  respondedById  String?
+}

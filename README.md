@@ -1,74 +1,122 @@
-# Kipepeo Platform
+# Kipepeo Platform – Frontend
 
-A bilingual React (Vite) front‑end for the Kipepeo Tanzania initiative. It showcases immersive travel, volunteering, and community projects, pulling media from Cloudinary and routing with `react-router-dom`.
+React 19 + Vite 7 single-page app for Kipepeo ONG. It now ships with a canonical site map, Helmet-based SEO, lazy-loaded routes, and local image assets (Cloudinary removed).
 
 ## Tech Stack
-- React 19 + Vite 7
-- React Router v7
-- Cloudinary for all image delivery
-- AOS, Framer Motion, Font Awesome for animation/iconography
+- React 19, React Router 7, Vite 7
+- TypeScript-friendly JSX (*.tsx) with path aliases (`@/…`)
+- react-helmet-async for meta/OG/Twitter tags
+- Static assets served from `frontend/public/images`
 
 ## Requirements
-- **Node.js ≥ 20** (Vite 7 requires `crypto.hash`). Use `.nvmrc`, `.node-version`, or `.tool-versions` to pin.
-- **npm ≥ 10**
+- Node.js ≥ 20 (use `.nvmrc` / `.node-version`)
+- npm ≥ 10
 
 ## Getting Started
 ```bash
-nvm use 20          # or volta/asdf equivalent
-npm install         # install root tooling (includes Cloudinary CLI deps)
 cd frontend
-npm install         # install front-end deps
-npm run dev         # launches Vite with bilingual site
+npm install           # installs deps (React Router 7, Helmet, etc.)
+npm run dev           # launches Vite dev server
 ```
-`npm run build` generates the production bundle, and `npm run preview` serves the dist build.
+The router is generated from `frontend/site.map.json`, so adding new pages only requires updating that file and creating the component referenced there.
 
-## Environment Variables
-Create `frontend/.env` or `.env.local` (gitignored) containing:
-```ini
-VITE_CLOUDINARY_DEFAULT_FOLDER=site   # blank if assets are at Cloudinary root
-NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=dctfxlyl2
-```
-For server‑side scripts (Audit/CLI) at the repo root create `.env.local` with:
-```ini
-CLOUDINARY_URL=cloudinary://<API_KEY>:<API_SECRET>@dctfxlyl2
-```
-Only `VITE_*` vars are available to browser code; everything else remains server-only.
+## Local Images
+- Store raster assets under `frontend/public/images` and reference them as `/images/<file>.jpg`.
+- `LocalImg` (`src/components/media/LocalImg.tsx`) standardizes `<img>` props with `loading="lazy"` by default.
+- Delete the placeholder JPGs once real photography is available.
 
-## Cloudinary Assets
-Every `<img>` uses `buildCloudinaryUrl`/`buildSrcSet`. Upload each of the referenced public IDs to the configured folder (`VITE_CLOUDINARY_DEFAULT_FOLDER`). Run:
-```bash
-npm run audit:ids         # lists all public_id references
-npm run audit:images      # (requires CLOUDINARY_URL) verifies assets exist via Admin API
-```
-Typical IDs include `logo`, `myphoto1`, `about-hero`, `A1`, `V1`–`V7`, `it1`–`it13`, `itg1`–`itg12`, etc. Broken assets log a `[Cloudinary IMG ERROR]` warning and show a dashed red outline in the UI.
+### Cloudinary (opcional)
+- Sube todas las imágenes a una carpeta en Cloudinary (p. ej. `kipepeo`) manteniendo los mismos nombres que usamos en `/images` (`travel-hero.jpg`, `gallery-1.jpg`, etc.).
+- Ve a **Settings → Upload → Upload presets** y crea un preset que suba a esa carpeta.
+- Establece `VITE_CLOUDINARY_BASE` en `frontend/.env` apuntando a la carpeta, por ejemplo:
+  ```
+  VITE_CLOUDINARY_BASE=https://res.cloudinary.com/dgfxnlp2v/image/upload/kipepeo
+  ```
+- No expongas tu API secret en el front. Solo necesitas el `cloud name` y la ruta pública.
+- El backend no requiere Cloudinary; si algún flujo futuro sube imágenes, configura `CLOUDINARY_URL` en el entorno de server.
+
+## SEO + Site Map
+- Page metadata lives inside `site.map.json`. Each route defines title, description, canonical path, breadcrumb, etc.
+- `<Helmet>` (`src/components/SEO/Helmet.tsx`) injects `<title>`, `<meta>` and JSON-LD when supplied.
+- Add optional `jsonLd` objects to any `site.map` route to emit structured data snippets.
+- Regenerate the sitemap whenever routes change:
+  ```bash
+  cd frontend
+  npm run sitemap
+  # writes public/sitemap.xml using site.map.json
+  ```
+
+## Scripts
+- `npm run dev` – Vite dev server with lazy routes and HelmetProvider
+- `npm run build` / `npm run preview` – production bundle + preview
+- `npm run sitemap` – generate `/public/sitemap.xml` from `site.map.json`
 
 ## Project Structure
 ```
 frontend/
+  public/images        # local JPG placeholders
+  site.map.json        # source of truth for routes + SEO
+  scripts/generate-sitemap.mjs
   src/
-    components/        # Navbar, Footer, Responsive sections
-    pages/             # Home, About, ImmersiveTravel, Volunteering, Projects, Contact
-    utils/             # cloudinary helpers, image diagnostics, i18n config
-    locales/           # en/es translation dictionaries
+    components/SEO     # Helmet wrapper
+    components/media   # LocalImg helper
+    layouts/MainLayout # header/footer + Helmet injection
+    pages/             # Home + About/Projects/Legal sections
+    routes.tsx         # builds router from site.map.json
 ```
-`
-frontend/src/utils/cloudinary.js` centralizes transform logic, responsive `srcset`, version injection, and folder overrides.
 
-## Internationalization
-The app ships with English/Spanish content via `react-i18next`. The navbar exposes an `EN/ES` toggle that updates the `html lang` attribute and remembers the preference in localStorage.
+---
 
-## Helpful Scripts
-- `npm run audit:ids` – list required Cloudinary public_ids.
-- `npm run audit:images` – validate Cloudinary presence (needs `CLOUDINARY_URL`).
-- `npm run diagnose:images` – launch dev server with diagnostics enabled.
+# Kipepeo Platform – Backend (API)
 
-## Deployment Notes
-- Commit `.nvmrc`/`.node-version` so CI/CD (Netlify, Vercel, etc.) pick Node 20 automatically.
-- Set `VITE_CLOUDINARY_DEFAULT_FOLDER` and `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME` in your hosting provider’s environment dashboard.
+Express + Prisma + JWT + Nodemailer lives under `server/`.
 
-## Contributing
-1. `nvm use`
-2. `cd frontend && npm install`
-3. Keep PRs bilingual (update JSON locales when adding text).
+## Tech Stack
+- Node.js 18 (ts-node-dev during development).
+- Prisma ORM targeting PostgreSQL.
+- Nodemailer for transactional emails (Mailhog in dev).
+- JSON Web Tokens (JWT) for auth.
 
-Happy hacking!
+## Getting Started
+```bash
+cd server
+npm install
+cp .env.example .env   # adjust DATABASE_URL, SMTP, FRONTEND_URL
+npx prisma migrate dev --name init
+npm run seed:admin     # creates loreto@kipepeo.ngo (ADMIN)
+npm run dev            # http://localhost:4000
+```
+On boot the API verifies the SMTP transport. With Mailhog:
+```
+SMTP_HOST=localhost
+SMTP_PORT=1026
+MAIL_FROM="Kipepeo <no-reply@kipepeo.ngo>"
+```
+Mailhog UI: http://localhost:8026
+
+## Useful scripts
+- `npm run seed:admin` – idempotent seed for the admin user (`loreto@kipepeo.ngo / Kipepeo1612`).
+- `npm run prisma:migrate` – run migrations.
+- `npm run prisma:generate` – regenerate Prisma client.
+
+## API Highlights
+- `POST /api/applications/member|volunteer|traveler` – formularios públicos conectados.
+- `POST /api/donations` – registra donaciones puntuales.
+- `POST /api/auth/login` – login con JWT.
+- `POST /api/auth/register` – finaliza registro desde invitación (`?email=&role=&token=`).
+- `GET /api/admin/*` – panel admin protegido (people, listas de solicitudes).
+- `POST /api/admin/decide` – aprobar/denegar solicitudes. Al aprobar se envía email con enlace directo a `/registro`.
+
+## Flujo recomendado (QA rápido)
+1. Enviar solicitud de voluntariado desde `/colabora/voluntariado`.
+2. Login admin (`loreto@kipepeo.ngo / Kipepeo1612`), ir a `/admin/voluntarios`, aprobar la solicitud.
+3. Revisar Mailhog → email “Tu acceso a Kipepeo” con enlace a `/registro?email=…&role=…&token=…`.
+4. Completar registro, iniciar sesión y comprobar RBAC (acceso a `/dashboard` y área del rol; `/admin` bloqueado).
+5. Revisar `/admin/personas` → click en el nombre para ver la ficha (perfil + solicitudes + donaciones).
+
+## SMTP en desarrollo
+Si Mailhog no está disponible, deja `SMTP_HOST` vacío: el API caerá en modo log (`MAIL_DEV_MODE=TRUE`) y los emails aparecerán en consola.
+
+## Next Steps
+- Reemplazar copys e imágenes provisionales por contenido definitivo (ES/EN).
+- Conectar RBAC avanzado (permisos por módulo) y exportes CSV desde el panel admin.

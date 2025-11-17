@@ -1,0 +1,22 @@
+:root {
+  /* Placeholder palette inspired by provided screenshot */
+  --brand-primary: #b669b2; /* violeta mariposa */
+  --brand-secondary: #b8f28b; /* verde pastel */
+  --brand-accent: #ff9bc2; /* coral rosado */
+  --brand-bg: #fdf8f6; /* marfil cálido */
+  --brand-surface: #ffffff;
+  --brand-muted: #7c7587;
+  --brand-text: #2f2938;
+  --brand-gradient: linear-gradient(120deg, #b669b2 0%, #8bd7a5 100%);
+  --brand-gradient-soft: linear-gradient(120deg, #f9ddff 0%, #d1f8d0 100%);
+  --radius: 16px;
+
+  --font-heading: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --font-body: 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+html,
+body {
+  background: var(--brand-bg);
+  color: var(--brand-text);
+}

@@ -1,0 +1,466 @@
+{
+  "site": {
+    "baseUrl": "https://www.kipepeo.ngo",
+    "defaultLang": "es",
+    "langs": ["es", "en"],
+    "routes": [
+      {
+        "path": "/",
+        "component": "pages/HomePage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Kipepeo ONG | Educación y desarrollo en Tanzania",
+        "description": "Transformamos vidas en Tanzania con educación, cariño y oportunidades. Descubre nuestros proyectos, colabora o viaja con impacto.",
+        "h1": "Transformamos vidas a través de la educación",
+        "canonical": "/",
+        "breadcrumb": "Inicio",
+        "jsonLd": {
+          "@context": "https://schema.org",
+          "@type": "NGO",
+          "name": "Kipepeo ONG",
+          "url": "https://www.kipepeo.ngo/",
+          "description": "Transformamos vidas en Tanzania con educación, cariño y oportunidades.",
+          "foundingLocation": {
+            "@type": "Place",
+            "name": "Mto wa Mbu, Manyara, Tanzania"
+          }
+        }
+      },
+      {
+        "path": "/perfil",
+        "component": "pages/profile/ProfilePage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Mi perfil | Kipepeo",
+        "description": "Gestiona tus datos personales, foto y preferencias dentro de la plataforma.",
+        "h1": "Tu perfil",
+        "canonical": "/perfil",
+        "breadcrumb": "Perfil"
+      },
+      {
+        "path": "/socio",
+        "component": "pages/roles/MemberArea.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Área socio/a | Kipepeo",
+        "description": "Accede a tus beneficios y comunicaciones como socio/a de Kipepeo.",
+        "h1": "Área socio/a",
+        "canonical": "/socio",
+        "breadcrumb": "Socio/a"
+      },
+      {
+        "path": "/voluntario",
+        "component": "pages/roles/VolunteerArea.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Área voluntariado | Kipepeo",
+        "description": "Recursos y comunicaciones para personas voluntarias.",
+        "h1": "Área voluntariado",
+        "canonical": "/voluntario",
+        "breadcrumb": "Voluntariado"
+      },
+      {
+        "path": "/donante",
+        "component": "pages/roles/DonorArea.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Área donantes | Kipepeo",
+        "description": "Consulta tus donaciones y actualizaciones exclusivas.",
+        "h1": "Área donantes",
+        "canonical": "/donante",
+        "breadcrumb": "Donantes"
+      },
+      {
+        "path": "/viajero",
+        "component": "pages/roles/TravelerArea.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Área viajeros | Kipepeo",
+        "description": "Planifica tu experiencia y accede a materiales antes del viaje.",
+        "h1": "Área viajeros",
+        "canonical": "/viajero",
+        "breadcrumb": "Viajeros"
+      },
+      {
+        "path": "/acerca-de",
+        "component": "pages/about/AboutIndex.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Acerca de Kipepeo | Nuestra historia, equipo y misión",
+        "description": "Conoce el origen, la misión y el equipo local de Kipepeo en Tanzania. Transparencia y compromiso con la educación.",
+        "h1": "Acerca de Kipepeo",
+        "canonical": "/acerca-de",
+        "breadcrumb": "Acerca de",
+        "children": [
+          {
+            "path": "origen",
+            "component": "pages/about/AboutOrigin.tsx",
+            "title": "Origen de Kipepeo | Una mariposa que transforma vidas",
+            "description": "La historia de Paulo y cómo Kipepeo nació para ofrecer educación y oportunidades a niños en Tanzania.",
+            "h1": "Nuestro origen",
+            "canonical": "/acerca-de/origen",
+            "breadcrumb": "Origen"
+          },
+          {
+            "path": "quienes-somos",
+            "component": "pages/about/AboutTeam.tsx",
+            "title": "Quiénes somos | Equipo Kipepeo Tanzania",
+            "description": "Equipo local y coordinadores que hacen posible Kipepeo. Educación, internado y proyectos comunitarios.",
+            "h1": "Quiénes somos",
+            "canonical": "/acerca-de/quienes-somos",
+            "breadcrumb": "Quiénes somos"
+          },
+          {
+            "path": "mision",
+            "component": "pages/about/AboutMission.tsx",
+            "title": "Nuestra misión | Educación para romper ciclos de pobreza",
+            "description": "Facilitamos oportunidades educativas y de desarrollo en contextos de alta vulnerabilidad.",
+            "h1": "Nuestra misión",
+            "canonical": "/acerca-de/mision",
+            "breadcrumb": "Misión"
+          },
+          {
+            "path": "objetivos",
+            "component": "pages/about/AboutObjectives.tsx",
+            "title": "Objetivos | Desarrollo comunitario y ODS",
+            "description": "Programas educativos, sociales y culturales orientados al impacto sostenible y los ODS.",
+            "h1": "Desarrollo comunitario",
+            "canonical": "/acerca-de/objetivos",
+            "breadcrumb": "Objetivos"
+          },
+          {
+            "path": "transparencia",
+            "component": "pages/about/AboutTransparency.tsx",
+            "title": "Transparencia | Estatutos e informes",
+            "description": "Accede a estatutos, informes de actividades y documentación legal de Kipepeo.",
+            "h1": "Transparencia",
+            "canonical": "/acerca-de/transparencia",
+            "breadcrumb": "Transparencia"
+          },
+          {
+            "path": "donde-estamos",
+            "component": "pages/about/AboutLocation.tsx",
+            "title": "Dónde estamos | Mto Wa Mbu, Manyara (Tanzania)",
+            "description": "Actuamos en la región de Manyara junto a comunidades Masai e Irak, con enfoque en educación y desarrollo.",
+            "h1": "Dónde estamos",
+            "canonical": "/acerca-de/donde-estamos",
+            "breadcrumb": "Dónde estamos"
+          }
+        ]
+      },
+      {
+        "path": "/login",
+        "component": "pages/auth/LoginPage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Acceso privado | Kipepeo",
+        "description": "Inicia sesión para acceder a tu área privada de Kipepeo.",
+        "h1": "Inicia sesión",
+        "canonical": "/login",
+        "breadcrumb": "Login"
+      },
+      {
+        "path": "/registro",
+        "component": "pages/auth/RegisterPage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Completa tu registro | Kipepeo",
+        "description": "Utiliza tu invitación para activar tu cuenta y acceder a la plataforma.",
+        "h1": "Completa tu registro",
+        "canonical": "/registro",
+        "breadcrumb": "Registro"
+      },
+      {
+        "path": "/dashboard",
+        "component": "pages/dashboard/DashboardPage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Dashboard | Kipepeo",
+        "description": "Accede a tu panel privado según tu rol.",
+        "h1": "Tu dashboard",
+        "canonical": "/dashboard",
+        "breadcrumb": "Dashboard"
+      },
+      {
+        "path": "/admin",
+        "component": "pages/admin/AdminLayout.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Administración | Kipepeo",
+        "description": "Gestiona solicitudes, donaciones y directorios desde el panel admin.",
+        "h1": "Panel de administración",
+        "canonical": "/admin",
+        "breadcrumb": "Admin",
+        "children": [
+          {
+            "path": "",
+            "component": "pages/admin/AdminHome.tsx",
+            "title": "Resumen admin",
+            "description": "Resumen general del panel admin",
+            "h1": "Resumen admin",
+            "canonical": "/admin"
+          },
+          {
+            "path": "voluntarios",
+            "component": "pages/admin/AdminVolunteersPage.tsx",
+            "title": "Voluntarios | Admin",
+            "description": "Solicitudes y estado de voluntariado",
+            "h1": "Voluntarios",
+            "canonical": "/admin/voluntarios"
+          },
+          {
+            "path": "donaciones",
+            "component": "pages/admin/AdminDonationsPage.tsx",
+            "title": "Donaciones | Admin",
+            "description": "Resumen de donaciones",
+            "h1": "Donaciones",
+            "canonical": "/admin/donaciones"
+          },
+          {
+            "path": "socios",
+            "component": "pages/admin/AdminMembersPage.tsx",
+            "title": "Socios | Admin",
+            "description": "Solicitudes de socios",
+            "h1": "Socios",
+            "canonical": "/admin/socios"
+          },
+          {
+            "path": "viajeros",
+          "component": "pages/admin/AdminTravelersPage.tsx",
+          "title": "Viajeros | Admin",
+          "description": "Solicitudes de viaje",
+          "h1": "Viajeros",
+          "canonical": "/admin/viajeros"
+        },
+        {
+          "path": "consultas",
+          "component": "pages/admin/AdminInfoRequestsPage.tsx",
+          "title": "Consultas | Admin",
+          "description": "Solicitudes de información",
+          "h1": "Consultas",
+          "canonical": "/admin/consultas"
+        },
+        {
+          "path": "personas",
+          "component": "pages/admin/AdminPeoplePage.tsx",
+          "title": "Personas | Admin",
+            "description": "Directorio general",
+            "h1": "Personas",
+            "canonical": "/admin/personas"
+          },
+          {
+            "path": "personas/:id",
+            "component": "pages/admin/AdminPersonDetailPage.tsx",
+            "title": "Detalle persona | Admin",
+            "description": "Ficha individual",
+            "h1": "Detalle persona",
+            "canonical": "/admin/personas/detalle"
+          }
+        ]
+      },
+      {
+        "path": "/proyectos",
+        "component": "pages/projects/ProjectsIndex.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Proyectos educativos y sociales en Tanzania | Kipepeo",
+        "description": "Becas, internado, cocina y comedor, biblioteca y sala de informática. Impacto real con equipo local.",
+        "h1": "Transformamos vidas, construimos futuros",
+        "canonical": "/proyectos",
+        "breadcrumb": "Proyectos",
+        "jsonLd": {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Proyectos educativos y sociales en Tanzania",
+          "url": "https://www.kipepeo.ngo/proyectos"
+        },
+        "children": [
+          {
+            "path": "becas",
+            "component": "pages/projects/ProjectBecas.tsx",
+            "title": "Proyecto de becas | Continuidad de estudios",
+            "description": "Apoyamos a jóvenes vulnerables con matrícula, uniformes, material y alimentación para continuar estudios.",
+            "h1": "Proyecto de Becas y Continuación de Estudios",
+            "canonical": "/proyectos/becas",
+            "breadcrumb": "Becas"
+          },
+          {
+            "path": "hogar",
+            "component": "pages/projects/ProjectHogar.tsx",
+            "title": "Internado “Hogar” | Dignidad y protección",
+            "description": "Alojamos a más de 200 menores en un entorno seguro, con camas y lockers propios.",
+            "h1": "Internado “Hogar”",
+            "canonical": "/proyectos/hogar",
+            "breadcrumb": "Hogar"
+          },
+          {
+            "path": "cocina-comedor",
+            "component": "pages/projects/ProjectCocinaComedor.tsx",
+            "title": "Cocina y comedor escolares | Alimentación digna",
+            "description": "Espacio rehabilitado con cocina profesional y comedor para 400 niños. Salud, convivencia e higiene.",
+            "h1": "Proyecto “Juntos en la Mesa” — Cocina y Comedor",
+            "canonical": "/proyectos/cocina-comedor",
+            "breadcrumb": "Cocina y comedor"
+          },
+          {
+            "path": "biblioteca",
+            "component": "pages/projects/ProjectBiblioteca.tsx",
+            "title": "Biblioteca y sala de juegos | Leer, pensar, crear",
+            "description": "De 3 libros a estanterías llenas. Juegos educativos y lectura como motor de aprendizaje.",
+            "h1": "Biblioteca y Sala de Juegos",
+            "canonical": "/proyectos/biblioteca",
+            "breadcrumb": "Biblioteca"
+          },
+          {
+            "path": "informatica",
+            "component": "pages/projects/ProjectInformatica.tsx",
+            "title": "Sala de informática | 28 ordenadores, futuro digital",
+            "description": "Aula moderna con formación en Word, Excel y tecnología responsable. Igualdad de oportunidades.",
+            "h1": "Sala de Informática",
+            "canonical": "/proyectos/informatica",
+            "breadcrumb": "Informática"
+          },
+          {
+            "path": "empoderamiento-femenino",
+            "component": "pages/projects/ProjectEmpoderamiento.tsx",
+            "title": "Empoderamiento femenino | Próximamente",
+            "description": "Programa de empoderamiento femenino. Muy pronto más información.",
+            "h1": "Empoderamiento femenino",
+            "canonical": "/proyectos/empoderamiento-femenino",
+            "breadcrumb": "Empoderamiento femenino",
+            "status": "coming-soon"
+          },
+          {
+            "path": "formacion-tecnica",
+            "component": "pages/projects/ProjectFormacion.tsx",
+            "title": "Formación técnica para adolescentes | Próximamente",
+            "description": "Programa de capacitación técnica juvenil. Muy pronto más información.",
+            "h1": "Formación técnica",
+            "canonical": "/proyectos/formacion-tecnica",
+            "breadcrumb": "Formación técnica",
+            "status": "coming-soon"
+          }
+        ]
+      },
+      {
+        "path": "/colabora",
+        "component": "pages/collaborate/CollaborateIndex.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Colabora con Kipepeo | Socios, donaciones y voluntariado",
+        "description": "Sé parte del cambio: hazte socio/a, dona o colabora con tu institución.",
+        "h1": "Colabora",
+        "canonical": "/colabora",
+        "breadcrumb": "Colabora",
+        "jsonLd": {
+          "@context": "https://schema.org",
+          "@type": "SupportAction",
+          "name": "Colabora con Kipepeo",
+          "url": "https://www.kipepeo.ngo/colabora",
+          "recipient": {
+            "@type": "NGO",
+            "name": "Kipepeo ONG"
+          }
+        },
+        "children": [
+          {
+            "path": "ser-socio",
+            "component": "pages/collaborate/CollaborateMember.tsx",
+            "title": "Hazte socio/a | Apoya la educación en Tanzania",
+            "description": "Únete como socio/a desde 30€ al año. Recibe informes e invitaciones a actividades.",
+            "h1": "Hazte socio/a de Kipepeo",
+            "canonical": "/colabora/ser-socio",
+            "breadcrumb": "Ser socio/a"
+          },
+          {
+            "path": "dona-ahora",
+            "component": "pages/collaborate/CollaborateDonate.tsx",
+            "title": "Dona ahora | Cada aportación cuenta",
+            "description": "Tu donación sostiene becas, materiales, alimentación y formación docente.",
+            "h1": "Cada donación cuenta",
+            "canonical": "/colabora/dona-ahora",
+            "breadcrumb": "Dona ahora"
+          },
+          {
+            "path": "voluntariado",
+            "component": "pages/collaborate/CollaborateVolunteer.tsx",
+            "title": "Voluntariado y alianzas | Universidades y ONG",
+            "description": "Modelo prioritario: colaboraciones institucionales y proyectos de largo plazo.",
+            "h1": "Únete y construyamos puentes",
+            "canonical": "/colabora/voluntariado",
+            "breadcrumb": "Voluntariado"
+          }
+        ]
+      },
+      {
+        "path": "/viaja",
+        "component": "pages/travel/TravelPage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Viajes solidarios a Tanzania | Vive y colabora",
+        "description": "Experiencias inmersivas con operadores locales; ingresos destinados a la ONG. Itinerario y galería.",
+        "h1": "Descubre Tanzania más allá del turismo",
+        "canonical": "/viaja",
+        "breadcrumb": "Viaja"
+      },
+      {
+        "path": "/galeria",
+        "component": "pages/gallery/GalleryPage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Galería Kipepeo | Vida y proyectos en Tanzania",
+        "description": "Imágenes y vídeos del colegio, el internado y la comunidad.",
+        "h1": "Galería",
+        "canonical": "/galeria",
+        "breadcrumb": "Galería"
+      },
+      {
+        "path": "/blog",
+        "component": "pages/blog/BlogIndex.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Blog Kipepeo | Historias de impacto y educación",
+        "description": "Noticias desde Tanzania, proyectos y testimonios reales.",
+        "h1": "Blog",
+        "canonical": "/blog",
+        "breadcrumb": "Blog"
+      },
+      {
+        "path": "/contacto",
+        "component": "pages/contact/ContactPage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Contacto Kipepeo | Escríbenos",
+        "description": "Colabora, dona, viaja o resuelve tus dudas. Estamos para ayudarte.",
+        "h1": "Contacto",
+        "canonical": "/contacto",
+        "breadcrumb": "Contacto",
+        "jsonLd": {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contacto Kipepeo",
+          "url": "https://www.kipepeo.ngo/contacto",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "hola@kipepeo.ngo",
+            "availableLanguage": ["es", "en"]
+          }
+        }
+      },
+      {
+        "path": "/legal/privacidad",
+        "component": "pages/legal/PrivacyPage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Política de privacidad | Kipepeo",
+        "description": "Información sobre el tratamiento de datos personales en Kipepeo.",
+        "h1": "Política de privacidad",
+        "canonical": "/legal/privacidad",
+        "breadcrumb": "Privacidad"
+      },
+      {
+        "path": "/legal/cookies",
+        "component": "pages/legal/CookiesPage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Política de cookies | Kipepeo",
+        "description": "Conoce qué cookies usamos, con qué finalidad y cómo gestionarlas.",
+        "h1": "Política de cookies",
+        "canonical": "/legal/cookies",
+        "breadcrumb": "Cookies"
+      },
+      {
+        "path": "/legal/terminos",
+        "component": "pages/legal/TermsPage.tsx",
+        "layout": "layouts/MainLayout.tsx",
+        "title": "Términos y condiciones | Kipepeo",
+        "description": "Condiciones de uso del sitio web de Kipepeo.",
+        "h1": "Términos y condiciones",
+        "canonical": "/legal/terminos",
+        "breadcrumb": "Términos"
+      }
+    ]
+  }
+}
